@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashley's portfolio</title>
+
+    <!-- ===css ==-->
+    <link rel="stylesheet" href="style.css">
+    
     <!-- =====BOX ICONS===== -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
@@ -11,115 +15,110 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <!--<link rel="stylesheet" href="path-to-your-css-file.css"> -->
 
-    <!-- ===css ==-->
-    <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
   <!-- === Header === -->
-   <header class="1-header">
-    
-    <nav class="nav bd-grid">
-
-      <div>
-        <a href="#" class="nav__logo">Ashley</a>
-      </div>
-
-      <div class="nav__toggle" id="nav-toggle">
-        <i class='bx bx-menu'></i>
-    </div>
-
-    <div class="nav__menu" id="nav-menu">
-      <div class="nav__close" id="nav-close">
-          <i class='bx bx-x'></i>
-      </div>
-
-      <ul class="nav__list">
-          <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li>
-          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-          <li class="nav__item"><a href="#projects" class="nav__link">Catalog</a></li>
-          <li class="nav__item"><a href="resume.html" class="nav__link">Resume</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-      </ul>
-  
-    </div>  
-        
+   <header class="navbar">
+  <div class="logo-container">
+    <h1 class="logo-name">Ashley.A</h1>
+    <nav class="dropdown-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="resume.html">Resume</a>
     </nav>
-   </header> 
-   
+  </div>
 
-   <main class="1-main">
-    <!-- ====== Home ===== -->
-    <section class="home" id="home">
-      <div class="home__container bd-grid">
+  <div class="email-container">
+    <a href="mailto:anochiriashley@gmail.com" class="email-link">
+      <span class="default-text">anochiriashley@gmail.com</span>
+      <span class="hover-email">Contact Me</span>
+    </a>
+  </div>
+</header>
 
-        <div class="home__img">
-
-          <img src="images/geometric-shapes-background-orange-tones-removebg-preview.png" alt="" data-speed="-2" class="move">
-          <img src="/images/gradient-pink-diamond-background__1_-removebg-preview.png" alt="" data-speed="-2" class="move">
-          <img src="images/gradient-pink-diamond-balls-arrangement-removebg-preview.png" alt="" data-speed="2" class="move">
-          <img src="images/img4.png" alt="" data-speed="2" class="move">
-          <img src="images/img5.png" alt="" data-speed="-2" class="move">
-          <img src="images/Vibrant_Pink_Light_Bulb-removebg-preview.png" alt="" data-speed="2" class="move">
-      </div>
-
+   <main class="hero">
+    <!-- ====== landing page ===== -->
+   <!-- <div class="float-img">
+      <img src="/images/ball.png" alt="">
+     </div> -->
+     
+    <div class="home__container">
+     
+    <section class="home" id="home"> 
         <div class="home__data">
-          <h1 class="home__title">Hi, It's <span>Ashley</span>
-           <br> I'm a <span id="dynamic-text">designer</span></h1>
+          <h1 class="home__title">Hi, It's Ashley, <br>
+            I'm a <br> <span id="dynamic-text">designer</span></h1>
       
         <p class="home__description">
           I craft engaging digital experiences through design and code.<br> Dive into my latest work and see what I've been up to! </p>
           <!-- ==== linked button ====-->
-        <a href="catalog.html" class="home__button"> view project</a>
-        </div>
+       <a href="catalog.html" class="home__button"> view project</a>
 
-        <!-- === font awesome icon === -->
+         <!----=== font awesome icon === -
 
-       <!-- <div class="font-icon">
+         <div class="font-icon">
           <a href=""><i class="fa-brands fa-github"></i></a>
           <a href=""><i class="fa-brands fa-youtube"></i></a>
           <a href=""><i class="fa-brands fa-instagram"></i></a>
-      </div>
+           
+      </div>  -->
 
-    -->
-
- 
+        </div>
+        </section>
       </div>
-     </section>
+     
    
    </main>
 
-   <div class="wel_come">
-    <h1>Welcome To Ashley's Creative Garden</h1>
-     
+   <div class="quote" id="pro">
+    <h1>The best code is not just functional, but an experience.</h1>
    </div>
 
-   <div class="container" id="projects">
+   <div class="wel_come">
+    <h1>Welcome To Ashley's Creative Garden</h1>  
+   </div>
+
+   <div class="project-layout" id="projects"> 
+    <section class="project-step">
     <a href="catalog.html" class="image-link">
-      <div class="project-image">
-        <img src="/images/15332052_1907.i109.042_programming development isometric.jpg" alt="Web development image">
-      </div>
+      <span class="project-image">
+        <img src="/images/ux 1.jpg" alt="Web development image">
+      </span>
         <span class="hover-text">Web development</span>
     </a>
+    </section>
+
+    <section class="project-step">
     <a href="target-page2.html" class="image-link">
-      <div class="project-image">
-        <img src="./images/30875711_7742133.jpg" alt="UX/UI design image">
-      </div>
+      <span class="project-image">
+        <img src="./images/ux.jpg" alt="UX/UI design image">
+      </span>
         <span class="hover-text">UX/UI design</span>
     </a>
+    </section>
+
+   <section class="project-step">
     <a href="target-page3.html" class="image-link">
-      <div class="project-image">
-        <img src="/images/01221a56bb1e864da4075e54d1dae6f3.jpg" alt="Graphic image">
-      </div>
+      <span class="project-image">
+        <img src="/images/ux 2.jpg" alt="Graphic image">
+      </span>
         <span class="hover-text">Graphic</span>
     </a>
+    </section>
+
+    <section class="project-step">
     <a href="target-page4.html" class="image-link">
-      <div class="project-image">
-        <img src="/images/videoframe_7485.png" alt="Motion graphic image">
-      </div>
+      <span class="project-image">
+        <img src="/images/ux 3.jpg" alt="Motion graphic image">
+      </span>
         <span class="hover-text">Motion Graphic</span>
     </a>
+    </section>
+
 </div>
+
 <!-- === contact me section =====-->
 <section>
   <div class="contact-container" id="contact">
@@ -148,15 +147,26 @@
     </div>
 </div>
 </section>
-   
+
+<!-- work with me section -->
+<section>
+  <div class="work-with-me">
+    <h1>work<br>
+      with<br>
+       me</h1>
+  </div>
+     
+</section>
+
 <!-- === footer== -->
    <footer class="footer">
    
-    <h1 class="footer-h1">Thanks for stoping by!</h1>
+    <h1 class="footer-h1">That’s a wrap.<br> Thanks for the visit!</h1>
     
     
     <div class="buttons">
-        <a href="https://www.youtube.com/@Ashley_Anochiri" target="_blank">Click here to know about me</a>
+        <a href="https://www.youtube.com/@Ashley_Anochiri" target="_blank">Curious who I am? Tap here to find out!
+          </a>
     </div>
     <nav>
         <ul>
@@ -166,9 +176,7 @@
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
-    <div class="rotating-image">
-        <img src="/images/alyssum.png" alt="Rotating Image">
-    </div>
+    
     <div class="moving-text">
       <h1> ⋆.𐙚 ̊ Ashley Anochiri ⋆.𐙚 ̊ Ashley Anochiri ⋆.𐙚 ̊ Ashley Anochiri ⋆.𐙚 ̊ Ashley Anochiri ⋆.𐙚 ̊ Ashley Anochiri ⋆.𐙚 ̊ Ashley Anochiri ⋆.𐙚 ̊ Ashley Anochiri</h1>  </div>
 
@@ -178,6 +186,29 @@
 
 <!--===== GSAP =====-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+<!-- === Background Color Scroll Logic === -->
+<!--<script>
+  const sectionColors = {
+    home: "#F4C2C2",           // Baby Pink
+    projects: "#fefed4",       // Baby Yellow
+    contact: "#FFFFFF",         // White
+  };
+
+  window.addEventListener("scroll", () => {
+    const sections = document.querySelectorAll("section, .container, .contact-container");
+
+    for (const section of sections) {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        const id = section.id || section.closest("div")?.id;
+        if (sectionColors[id]) {
+          document.body.style.backgroundColor = sectionColors[id];
+        }
+      }
+    }
+  });
+</script> -->
 
 <script src="script.js"></script>
 

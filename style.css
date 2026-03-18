@@ -1,4 +1,9 @@
- 
+ /*css rest starts here */
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 /*===== VARIABLES CSS =====*/
@@ -10,13 +15,11 @@
   --first-color-dark: #C1576A;
   --first-color-darken: #A83E51;
   --white-color: #FCF8F8;
-  
 
 
+/* === Smooth Background Transition === */
 body {
-  
-    background-color: rgb(250, 230, 206);
-    width: auto; /* will come back to check this */
+  transition: background-color 0.8s ease-in-out;
 }
 
 /*===== Font and typography =====*/
@@ -29,12 +32,7 @@ body {
 }
 
 /*********** styling the header & nav bar *************/
-@media screen and (min-width: 768px){
-    :root{
-      --big-font-size: 5rem;
-      --normal-font-size: 1rem;
-    }
-  }
+
   
   /*===== BASE =====*/
   *,::before,::after{
@@ -66,135 +64,170 @@ body {
     max-width: 100%;
     height: auto;
   }
-  
-  /*===== LAYOUT =====*/
-  .bd-grid{
-    max-width: 1024px;
-    display: grid;
-    grid-template-columns: 100%;
-    column-gap: 2rem;
-    width: calc(100% - 2rem);
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-  
-  .l-header{
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: var(--z-fixed);
-    background-color: var(--first-color);
-  }
-  
-  /*===== NAV =====*/
-  .nav{
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  @media screen and (max-width: 768px){
-    .nav__menu{
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 70%;
-      height: 100%;
-      padding: 3.5rem 1.5rem 0;
-      background: rgba(255,255,255,.3);
-      backdrop-filter: blur(10px);
-      transition: .5s;
-    }
-/* === for project section == */
-    .project-image {
-      height: 480px;
-  }
 
-  }
+  /* nav bar starts here */
+
+body {
+  margin: 0;
+  /* Adding a background pattern/color helps see the transparency */
+  background-color: #ff9ec5d8;
+  height: 200vh; 
+} 
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px 60px; /* Reduced top padding to bring menu closer */
+  box-sizing: border-box;
+  z-index: 9999;
   
-  .nav__close{
-    position: absolute;
-    top: .75rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
   
-  .nav__item{
-    margin-bottom: 2rem;
-  }
+}
+
+/* --- LOGO & CENTERED DROPDOWN --- */
+.logo-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the dropdown relative to the name */
+}
+
+.logo-name {
+  font-size: 1.8rem; /* Made it bigger as requested */
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Sits right at the bottom of the name */
+  margin-top: 5px; /* Tiny gap so it doesn't touch, but close enough to not break hover */
+  padding: 25px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   
-  .nav__close, .nav__link a, .nav__logo, .nav__list .nav__toggle{
-    color: rgb(208, 108, 108);  }
-  .nav__logo{
-    font-size: 1.5rem;
-    text-decoration: bold;
-  }
+  /* GLASSMORPHISM - Bluish Transparent */
+  background: rgba(220, 235, 255, 0.6); 
+  backdrop-filter: blur(15px); 
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px; /* Stylish "Butter" Radius */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   
-  .nav__link:hover{
-    color: var(--first-color-dark);
-  }
+  /* Animation */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center; /* Centers the links inside the box */
+}
+
+.logo-container:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* --- LINK STYLING --- */
+.dropdown-menu a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 1.1rem; /* Bigger font */
+  transition: all 0.3s ease;
+}
+
+/* PINK HOVER EFFECT */
+.dropdown-menu a:hover {
+  color: #ff007f; /* Vibrant Pink */
+  transform: scale(1.05); /* Subtle pop */
+}
+
+/* --- EMAIL (Right Side) --- */
+.email-link {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  height: 1.2em;
+  overflow: hidden;
+  display: block;
+}
+
+.default-text, .hover-email {
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-email {
+  color: #ff007f; /* Pink on hover */
+  font-weight: 700;
+}
+
+.email-link:hover .default-text {
+  transform: translateY(-100%);
+}
+
+.email-link:hover .hover-email {
+  transform: translateY(-100%);
+}
+
+  /*=== Stying the hero page === */
+  .hero {
   
-  .nav__toggle{
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  /*=== Show menu ===*/
-  .show{
-    right: 0;
-  }
+  color: rgb(31, 27, 27);
+  text-align: center;
+  padding: 100px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+}
+
+h1 {
+  font-size: 5rem; /* Big and bold */
+  font-weight: 800;
+  max-width: 800px;
+  margin: 20px auto;
+}
   
   /*===== HOME =====*/
-  .home{
-    background-color: var(--first-color);
-    overflow: hidden;
-  }
+ 
   
-  .home__container{
-    height: calc(100vh - var(--header-height));
-    grid-template-rows: repeat(2, max-content);
-    row-gap: 1.5rem;
-  }
-  
-  .home__img{
-    position: relative;
-    padding-top: 1.5rem;
-    justify-self: center;
-    width: 50px;
-    height: 50px;
-  }
-  
-  .home__img img{
-    position: absolute;
-    gap: 50rem;
-    top: -300px;
-    left: 500px;
-  }
-  
+ 
   .home__data{
-    color: var(--white-color);
+    color: black;
   }
   
   .home__title{
-    font-size: var(--big-font-size);
-    line-height: 1.3;
     margin-bottom: 1rem;
-    margin-top: 5rem; 
+    line-height: 1.05;
   }
   
   .home__description{
+    font-size: 1.5rem;
     margin-bottom: 2.5rem;
+    font-weight: bold;
+    color: #333;
   }
   
   .home__button{
     display: inline-block;
-    background-color: var(--first-color-dark);
+    background-color: #e365b1f9;
     color: var(--white-color);
     padding: 1.125rem 2rem;
-    border-radius: .5rem;
+    border-radius: 5rem;
   }
   
   .home__button:hover{
@@ -203,180 +236,98 @@ body {
 
 
   
-  /* ===== MEDIA QUERIES =====*/
-  @media screen and (min-width: 768px){
-    body{
-      margin: 0;
-    }
-    
-    .nav{
-      height: calc(var(--header-height) + 1.5rem);
-    }
   
-    .nav__toggle, .nav__close{
-      display: none;
-    }
-  
-    .nav__list{
-      display: flex;
-    }
-  
-    .nav__item{
-      margin-left: 3rem;
-      margin-bottom: 0;
-    }
-  
-    .home__container .font-icon{
-      height: 100vh;
-      grid-template-columns: repeat(2, max-content);
-      grid-template-rows:  1fr;
-      row-gap: 0;
-      align-items: center;
-      justify-content: center;
-    }
 
-    .font-icon a {
-        font-size: 2rem;
-        text-decoration: none;
-        color: white;
-        margin: 0 10px; /* Adds 10px space on left and right */
-        padding-top: 30px;
-    }
-    
-    
-    .home__img{
-      order: 1;
-      width: 375px;
-      height: 289px;
-    }
-  
-    .home__img img{
-      width: 375px;
-    }
-  }
-
-  @media screen and (min-width: 1024px){
-    .bd-grid{
-      margin-left: auto;
-      margin-right: auto;
-    }
-  
-    .home__container{
-      justify-content: initial;
-      column-gap: 4.5rem;
-    }
-  
-    .home__img{
-      width: 604px;
-      height: 466px;
-    }
-  
-    .home__img img{
-     
-      width: 404px;
-    }
-  }
-
- /*.header {
-    
-    top: 0;
-    left: 0;
+/* foating image*/
+.float-img img{
+  transform-style: preserve-3d;
+  filter: blur(10px);
+  position: relative; /* needed for left positioning */
+  position: sticky;
+  z-index: 49;
     width: 100%;
-    padding: 20px 100px;
-    background: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-}
-
-/*.logo {
-    font-size: 32px;
-    color: beige;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.navbar a {
-    position: relative;
-    font-size: 18px;
-    color: beige;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 40px;
-}
-
-.navbar a::before {
-    content: '';
+    max-width: 600px;
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: .3s;
+    top: 235px;
+    left: -388px;
+    right: 17px;
+
+
 }
 
-.navbar a:hover::before {
-    width: 100%;
-} */
- 
-
-
-/*.home {
-    display: flex;
-    align-self: self-end;
-    padding: 5px, 1px;
-}
 
 /* ===== styling the h1(my name and skills) */
 #dynamic-text {
     /* Add any styling you want for the changing text */
     font-weight: bold; /* Example: Make the text bold */
-    color: rgba(255, 72, 212, 0.976); /* Example: Change the color */
+    color: #e365b1f9; /* Example: Change the color */
   }
 
   .home_button{ /* ===== view project button ===== */
-    display: inline-block;
-    background-color: var(--first-color-dark);
-    color: var(--white-color);
-    padding: 1.125rem 2rem;
-    border-radius: .5rem;
+   
+    background-color: #e365b1f9; 
+    color: black;
+    border-radius: 5rem;
+    }
+  /* quote*/
+  .quote h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    margin: 0 auto;
+    font-size: 65px;
+    text-align: center;
+    min-height: 100vh;
   }
-
 
 /*********** styling the box eg the catalog *********************/
 
 .wel_come h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    
+    font-size: 65px;
+    text-align: center;
+    min-height: 100vh;
 
     margin: 0 auto;
     text-align: center;
-    font-size: 80px;
-    width: 80%; /* Ensure the h1 spans the full width */
+
+    padding: 5rem 5rem 10rem;
 }
 
-/*.container img {
-    width: 380px;
-    height: 400px;
-    object-fit: cover;
-    object-position: bottom;
-    border: 8px solid white;
-    margin: 10px;  
-} 
 
 
-/* == from ai */
+
 /* Container Styling ( product images, after the welcome ) */
-.container {
+
+.project-layout{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
- /* max-width: 1200px; */
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 7rem;
+  padding-bottom: 20rem;
   margin: 0 auto;
-  gap: 20px;
-  padding: 8rem;
-  margin-bottom: 10rem;
 }
+
+.project-layout {
+  scroll-snap-type: y proximity; /* 'proximity' is smoother/less 'glitchy' than mandatory */
+  scroll-behavior: smooth;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+}
+
+.project-step {
+  height: 100vh;           /* Each section takes up the full screen */
+  
+  scroll-snap-align: start; /* Align the TOP of the section to the top of the screen */
+}
+
+
 
 /* Link Styling */
 .image-link {
@@ -384,20 +335,19 @@ body {
  /* width: 250px; /* Adjust width as needed */
  /* height: 350px; /* Adjust height as needed */
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.428);
   transition: transform 0.3s ease;
+  
 }
-.image-link:nth-child(2n-2){
-  position: relative;
-  top: 30rem;
-}
+
 .image-link{
-  width: calc(50% - 60px);
-  margin-bottom: 20rem;
+
+  margin-bottom: 10rem;
   text-align: center;
   box-sizing: border-box;
   display: inline-block;
+  position: relative;
 }
 
 .image-link:hover {
@@ -407,17 +357,20 @@ body {
 /* Image Styling */
 .image-link img {
   display: block;
-  width: 100%;
-  height: 100%; 
+  max-width: 500px;
+  height: 200%; 
   border-radius: inherit; /* Matches the link's rounded corners */
   object-fit: cover;
+  aspect-ratio: 1;
 }
 
 
 .project-image{
-  border-radius: 24px;
-  height: 640px;
+  display: block;
+  border-radius: 20px;
+  height: auto;
   overflow: hidden;
+
  
 }
 
@@ -454,7 +407,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: 0 auto;
     padding: 8rem 6rem;
-   
+    flex-direction: column;
+    align-items: center; 
     
 }
 
@@ -462,13 +416,10 @@ body {
     
     font-size: 40px;
 }
-.contact-des{
-
-   
+.contact-des{ 
     font-size: 19px;
     padding-top: 1rem; 
-    word-wrap: break-word;
-       
+    word-wrap: break-word;       
 }
 
 .contact-form {
@@ -527,6 +478,14 @@ background-color: #e5a3af;
   
 }
 
+/* == work with me section == */
+
+.work-with-me{
+  text-align: left;
+  text-transform: uppercase;
+  width: 100%;
+}
+
 /* ==== footer page ==== */
 
 /* Footer styling */
@@ -535,7 +494,7 @@ background-color: #e5a3af;
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 10rem 5rem 10rem;
   overflow: hidden;
   font-family: Arial, sans-serif;
 }
@@ -547,8 +506,8 @@ background-color: #e5a3af;
   color: #e7adde;
   font-weight: bold;
   font-size: 88px;
-  animation: scroll-text 50s linear infinite;
-  margin-bottom: 10px;
+  animation: scroll-text 8s linear infinite;
+ 
 }
 
 @keyframes scroll-text {
@@ -564,21 +523,20 @@ background-color: #e5a3af;
 .footer-h1 {
   font-weight: bold;
   font-size: 4rem;
-  margin: 20px 0 10px;
-  color: #e7adde;
+ 
 }
 
 /* YouTube link button */
 .buttons a {
   display: inline-block;
-  padding: 10px 20px;
-  margin: 10px 0;
+  padding: 2rem 5rem 2rem;
+  margin: 5rem 0;
   background-color: #e7adde;
-  color: #333;
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 2rem;
-  border-radius: 5px;
+  font-size: 20px;
+  border-radius: 10px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
