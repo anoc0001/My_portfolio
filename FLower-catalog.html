@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peony | Luxury Floral Catalog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="flower-catalog.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar__logo"><a href="index.html">Peony 🌸</a></div>
+        <ul class="navbar__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="navbar__icons">
+            <div class="icon-wrapper" id="cart-trigger" style="cursor: pointer;">
+                <span>Cart</span>
+                <b id="cart-count">(0)</b>
+            </div>
+        </div>
+    </nav>
+
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Selection</h2>
+            <button id="close-cart">✕</button>
+        </div>
+        <div id="cart-items-list">
+            </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Total:</span>
+                <span>$<span id="cart-total-price">0</span></span>
+            </div>
+            <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+        </div>
+    </div>
+
+    <main class="catalog-container">
+        <header class="catalog-intro">
+            <h1 class="catalog-title">THE CATALOG</h1>
+            <div class="search-wrapper">
+                <input type="text" id="flower-search" placeholder="Search for a specific bloom or jar...">
+            </div>
+        </header>
+
+        <section class="catalog-section">
+            <h2 class="category-header">01 / BIRTHDAY</h2>
+            <div class="product-menu-grid">
+                <div class="menu-item" data-name="Peony Mason Jar" data-price="45">
+                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=800" alt="Peonies in Mason Jar">
+                    <div class="menu-details">
+                        <h3>Peony Mason Jar</h3>
+                        <p class="price">$45</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalog-section">
+            <h2 class="category-header">02 / ANNIVERSARY</h2>
+            <div class="product-menu-grid">
+                <div class="menu-item" data-name="Blush Glass Vase" data-price="65">
+                    <img src="https://images.unsplash.com/photo-1561131103-6893e4a2b904?q=80&w=800" alt="Roses in Glass Vase">
+                    <div class="menu-details">
+                        <h3>Blush Glass Vase</h3>
+                        <p class="price">$65</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalog-section">
+            <h2 class="category-header">03 / BRIDAL</h2>
+            <div class="product-menu-grid">
+                <div class="menu-item" data-name="Orchid Ceramic" data-price="85">
+                    <img src="https://images.unsplash.com/photo-1563245332-6902b890833a?q=80&w=800" alt="Orchids in Ceramic">
+                    <div class="menu-details">
+                        <h3>Orchid Ceramic</h3>
+                        <p class="price">$85</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="image-lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="full-image">
+    </div>
+
+    <script src="flower-catalog.js"></script>
+</body>
+</html>
