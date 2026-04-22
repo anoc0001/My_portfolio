@@ -2,259 +2,14 @@
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 /*===== VARIABLES CSS =====*/
-:root{
-  --header-height: 3rem;
 
-  /*===== Colors =====*/
-  --first-color: #FCA4A6;
-  --first-color-dark: #C1576A;
-  --first-color-darken: #A83E51;
-  --white-color: #FCF8F8;
-  
-
-
-
-
-/*===== Font and typography =====*/
---body-font: 'Poppins', sans-serif;
---big-font-size: 2.5rem;
---normal-font-size: .938rem;
-
-/*===== z index =====*/
---z-fixed: 100;
-}
-
-/*********** styling the header & nav bar *************/
-@media screen and (min-width: 768px){
-    :root{
-      --big-font-size: 5rem;
-      --normal-font-size: 1rem;
-    }
-  }
-  
-  /*===== BASE =====*/
-  *,::before,::after{
-    box-sizing: border-box;
-  }
-  
-  body{
-    margin: var(--header-height) 0 0 0;
-    padding: 0;
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    font-weight: 500;
-    background-color: rgb(241, 186, 117);
-  }
-  
-  h1,p,ul{
-    margin: 0;
-  }
-  
-  ul{
-    padding: 0;
-    list-style: none;
-  }
-  
-  a{
-    text-decoration: none;
-  }
-  
-  img{
-   /* max-width: 100%; */
-    height: auto;
-  }
-  
-  /*===== LAYOUT =====*/
-  .bd-grid{
-    max-width: 1024px;
-    display: grid;
-    grid-template-columns: 100%;
-    column-gap: 2rem;
-    width: calc(100% - 2rem);
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-  
-  .l-header{
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: var(--z-fixed);
-    background-color: var(--first-color);
-  }
-  
-  /*===== NAV =====*/
-  .nav{
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  @media screen and (max-width: 768px){
-    .nav__menu{
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 70%;
-      height: 100%;
-      padding: 3.5rem 1.5rem 0;
-      background: rgba(255,255,255,.3);
-      backdrop-filter: blur(10px);
-      transition: .5s;
-    }
-  }
-  
-  .nav__close{
-    position: absolute;
-    top: .75rem;
-    right: 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  .nav__item{
-    margin-bottom: 2rem;
-  }
-  
-  .nav__close, .nav__link a, .nav__logo, .nav__list .nav__toggle{
-    color: wheat;
-  }
-  .nav__logo{
-    font-size: 1.5rem;
-    text-decoration: bold;
-  }
-  
-  .nav__link:hover{
-    color: var(--first-color-dark);
-  }
-  
-  .nav__toggle{
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  /*=== Show menu ===*/
-  .show{
-    right: 0;
-  }
-  
-  
-  /* ===== MEDIA QUERIES =====*/
-  @media screen and (min-width: 768px){
-    body{
-      margin: 0;
-    }
-    
-    .nav{
-      height: calc(var(--header-height) + 1.5rem);
-    }
-  
-    .nav__toggle, .nav__close{
-      display: none;
-    }
-  
-    .nav__list{
-      display: flex;
-    }
-  
-    .nav__item{
-      margin-left: 3rem;
-      margin-bottom: 0;
-    }
-  
-   
-    .font-icon a {
-        font-size: 2rem;
-        text-decoration: none;
-        color: white;
-        margin: 0 10px; /* Adds 10px space on left and right */
-        padding-top: 30px;
-    }
-    
-    
-  
-  }
-
-  @media screen and (min-width: 1024px){
-    .bd-grid{
-      margin-left: auto;
-      margin-right: auto;
-    }
-  
-    .home__container{
-      justify-content: initial;
-      column-gap: 4.5rem;
-    }
-  
-    .home__img{
-      width: 604px;
-      height: 466px;
-    }
-  
-    .home__img img{
-      width: 604px;
-    }
-  }
-
- /*.header {
-    
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    background: transparent;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-}
-
-/*.logo {
-    font-size: 32px;
-    color: beige;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.navbar a {
-    position: relative;
-    font-size: 18px;
-    color: beige;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 40px;
-}
-
-.navbar a::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: .3s;
-}
-
-.navbar a:hover::before {
-    width: 100%;
-} */
  
-
-
-/*.home {
-    display: flex;
-    align-self: self-end;
-    padding: 5px, 1px;
-}
-*/
-
+  
   .resume {
     display: grid;
     justify-items: center;
     margin: auto;
+    margin-top: 100px;
     margin-bottom: 5rem;
     gap:5rem;
     
@@ -282,26 +37,51 @@
   }
 
 
-  /* Navigation links */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  display: inline-flex;
-  gap: 15px;
-  margin: 20px 0;
+ 
+.panel {
+  height: 100vh;
+  padding: 2rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-nav ul li a {
-  color: #FFF;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #FFD700;
-}
-
-
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume {
+    margin-top: 80px;
+    margin-bottom: 3rem;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
   
+  .resume img {
+    width: 90%;
+    margin-top: 30px;
+  }
+  
+  .download-button {
+    padding: 8px 16px;
+    font-size: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume {
+    margin-top: 70px;
+    margin-bottom: 2rem;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .resume img {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .download-button {
+    padding: 6px 12px;
+    font-size: 90%;
+  }
+}

@@ -4,23 +4,14 @@
   padding: 0;
   box-sizing: border-box;
  }
-/*===== GOOGLE FONTS =====*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 /*===== VARIABLES CSS =====*/
 :root{
   --header-height: 3rem;
 
-  /*===== Colors =====*/
-  --first-color: #FCA4A6;
-  --first-color-dark: #C1576A;
-  --first-color-darken: #A83E51;
-  --white-color: #FCF8F8;
-
-
+  
 /* === Smooth Background Transition === */
-body {
-  transition: background-color 0.8s ease-in-out;
-}
+
 
 /*===== Font and typography =====*/
 --body-font: 'Poppins', sans-serif;
@@ -35,16 +26,20 @@ body {
 
   
   /*===== BASE =====*/
-  *,::before,::after{
-    box-sizing: border-box;
-  }
+
   
   body{
-    margin: var(--header-height) 0 0 0;
+    
     padding: 0;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     font-weight: 500;
+    min-height: 100vh;
+    transition: background-color 0.8s ease-in-out;
+    margin: 0;
+    padding: 0;
+    background-color: #f7a4d89c; /* Your pink color */
+   overflow-x: hidden; /* Prevents side-scrolling */
   }
   
   h1,p,ul{
@@ -67,133 +62,165 @@ body {
 
   /* nav bar starts here */
 
-body {
-  margin: 0;
-  /* Adding a background pattern/color helps see the transparency */
-  background-color: #ff9ec5d8;
-  height: 200vh; 
-} 
 
+
+/*  Navbar Styling */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  padding: 20px 60px; /* Reduced top padding to bring menu closer */
-  box-sizing: border-box;
-  z-index: 9999;
-  
-  
+  padding: 20px 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: transparent; /* Or whatever your theme color is */
 }
-
-/* --- LOGO & CENTERED DROPDOWN --- */
-.logo-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers the dropdown relative to the name */
-}
-
 .logo-name {
   font-size: 1.8rem; /* Made it bigger as requested */
   font-weight: 700;
   letter-spacing: 1px;
-  margin: 0;
+  margin: 0; 
+}
+/* 2. Hamburger Icon Style */
+.menu-toggle {
+  font-size: 2rem;
   cursor: pointer;
-  text-transform: uppercase;
+  z-index: 1001; /* Stays above the menu when it opens */
+  color: #333; /* Change to your preferred color */
 }
 
-.dropdown-menu {
-  position: absolute;
-  top: 100%; /* Sits right at the bottom of the name */
-  margin-top: 5px; /* Tiny gap so it doesn't touch, but close enough to not break hover */
-  padding: 25px;
-  min-width: 220px;
+/* 3. The Full-Screen Overlay */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 237, 250, 0.918); /* Slightly transparent white */
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  justify-content: center;
+  align-items: center;
   
-  /* GLASSMORPHISM - Bluish Transparent */
-  background: rgba(220, 235, 255, 0.6); 
-  backdrop-filter: blur(15px); 
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 24px; /* Stylish "Butter" Radius */
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  
-  /* Animation */
+  /* Hidden by default */
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  text-align: center; /* Centers the links inside the box */
+  transition: opacity 0.3s ease;
 }
 
-.logo-container:hover .dropdown-menu {
+/* 4. When the menu is "Active" (triggered by JS later) */
+.nav-overlay.active {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
 }
 
-/* --- LINK STYLING --- */
-.dropdown-menu a {
+/* 5. Menu Links Styling */
+.nav-links {
+  list-style: none;
+  text-align: center;
+}
+
+.nav-links li {
+  margin: 20px 0;
+}
+
+.nav-links a {
   text-decoration: none;
-  color: #1a1a1a;
-  font-weight: 600;
-  font-size: 1.1rem; /* Bigger font */
-  transition: all 0.3s ease;
+  font-size: 2.5rem; /* Large text for that clean look */
+  font-weight: bold;
+  color: #000;
+  transition: color 0.3s ease;
 }
 
-/* PINK HOVER EFFECT */
-.dropdown-menu a:hover {
-  color: #ff007f; /* Vibrant Pink */
-  transform: scale(1.05); /* Subtle pop */
-}
+.nav-links a:hover {
+  color: #e365b1f9; /* Or your brand accent color */
+} /* nav bar ends here */
 
-/* --- EMAIL (Right Side) --- */
-.email-link {
-  text-decoration: none;
-  color: #1a1a1a;
-  font-weight: 600;
-  font-size: 1.1rem;
-  position: relative;
-  height: 1.2em;
-  overflow: hidden;
-  display: block;
-}
 
-.default-text, .hover-email {
-  display: block;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hover-email {
-  color: #ff007f; /* Pink on hover */
-  font-weight: 700;
-}
-
-.email-link:hover .default-text {
-  transform: translateY(-100%);
-}
-
-.email-link:hover .hover-email {
-  transform: translateY(-100%);
-}
 
   /*=== Stying the hero page === */
-  .hero {
-  
-  color: rgb(31, 27, 27);
-  text-align: center;
-  padding: 100px 20px;
+
+/* --- Layering (The Background) --- */
+/* Cleaned Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Fits perfectly to the screen */
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-
+  overflow: hidden;
+  /* We removed the black background so it stays seamless */
+  
 }
+
+/* Background Layers */
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Stays at the very back */
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.4; /* Adjust this to see more/less of your pink body background */
+}
+
+#particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Particles on top of video */
+  pointer-events: none;
+}
+#particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; /* Sits between video and text */
+}
+
+/* Your Content Layer */
+.home__container {
+  position: relative;
+  z-index: 10; /* Keeps text and buttons on the very top */
+  width: 100%;
+  text-align: center;
+}
+
+/* Fix for the body to prevent the 'black gap' at the top */
+
+.home__title {
+  font-size: clamp(2.5rem, 8vw, 5rem); /* Responsive font size */
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.name-style {
+  color: #e365b1f9; /* Your signature pink */
+}
+
+#dynamic-text {
+  font-weight: bold;
+  color: #e365b1f9;
+}
+
+.home__description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
 
 h1 {
   font-size: 5rem; /* Big and bold */
@@ -203,8 +230,6 @@ h1 {
 }
   
   /*===== HOME =====*/
- 
-  
  
   .home__data{
     color: black;
@@ -222,127 +247,355 @@ h1 {
     color: #333;
   }
   
-  .home__button{
+  .home__button  {
+    font-size: 1rem;
     display: inline-block;
     background-color: #e365b1f9;
     color: var(--white-color);
-    padding: 1.125rem 2rem;
+    padding: 1.3rem  6rem;
+    gap: 5rem;
     border-radius: 5rem;
   }
   
   .home__button:hover{
-    background-color: var(--first-color-darken);
+    background-color: #e365b1f9;
+    box-shadow: 0 0 15px 5px #e365b1f9;
+    transform: scale(1.05);
   }
 
+  .home__button{
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+.second-button{
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
 
-  
-  
-
-/* foating image*/
-.float-img img{
-  transform-style: preserve-3d;
-  filter: blur(10px);
-  position: relative; /* needed for left positioning */
-  position: sticky;
-  z-index: 49;
-    width: 100%;
-    max-width: 600px;
-    position: absolute;
-    top: 235px;
-    left: -388px;
-    right: 17px;
+.second-button{
+   font-size: 1rem;
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid;
+    color: var(--white-color);
+    padding: 1.3rem  6rem;
+    gap: 5rem;
+    border-radius: 5rem;
+}
+.second-button:hover{
+  background-color: #e0e0e0;
+  box-shadow: 0 0 15px 5px #e365b1f9;
+  transform: scale(1.05);
 
 
 }
+.butt-parent{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
 
+/* ===== styling the quote section */
 
-/* ===== styling the h1(my name and skills) */
-#dynamic-text {
-    /* Add any styling you want for the changing text */
-    font-weight: bold; /* Example: Make the text bold */
-    color: #e365b1f9; /* Example: Change the color */
-  }
-
-  .home_button{ /* ===== view project button ===== */
-   
-    background-color: #e365b1f9; 
-    color: black;
-    border-radius: 5rem;
-    }
   /* quote*/
   .quote h1{
   display: flex;
   align-items: center;
   justify-content: center;
-    margin: 0 auto;
-    font-size: 65px;
-    text-align: center;
-    min-height: 100vh;
+   min-height: 100vh;
+  font-size: 65px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center; 
   }
 
+  .quote {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 65px;
+    font-family: inherit;
+    font-weight: bolder;
+    font-family: 'Poppins', sans-serif;
+    max-width: 800px;
+    line-height: 1.4;
+    margin: 100px auto;
+    will-change: transform, opacity;
+    transition: color 0.3s ease; /* Makes the highlight feel soft */
+    margin-top: 200px;  
+}
+.quote span {
+   /* Required for GSAP to move/scale individual words */
+ 
+  opacity: 0.2;
+  font-size: 65px;
+  font-weight: bold;
+  font-family: inherit;
+  font-family: 'Poppins', sans-serif;
+}
+/* This only affects the icons, not your text */
+/* --- REPLACE PREVIOUS ICON CSS WITH THIS --- */
+
+/* The Wrapper ensures the blur doesn't bleed into other sections */
+.quote-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* THE BIG BLUR & GEAR (Pinned Left) 
+.big-half-circle {
+    position: absolute;
+    left: -250px; /* Hides half 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    background-color: #ff9ed5;
+    filter: blur(30px);
+    border-radius: 50%;
+    z-index: 0;
+}
+*/
+
+.icon-setting {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 120px; /* Big gear as requested */
+    opacity: 2;
+    z-index: 1;
+    
+}
+.flower-icon {
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.05));
+    transition: transform 0.6s ease;
+}
+
+/* THE CLOSING TAG (Pinned Center, Over the Text) */
+/* REPLACE your old .icon-code with this */
+/* Update your .icon-code to this */
+.icon-code {
+    position: absolute;
+    left: 50%;
+    bottom: -150px; 
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 300px;
+    /* THE FIXES */
+    z-index: 1000 !important; /* Force it in front of the 'best code' text */
+    opacity: 1;
+    pointer-events: none;
+    will-change: transform;
+    transform-style: preserve-3d;
+
+    /* If using text, keep these. If using an image, these won't hurt. */
+    font-size: 70px;
+    font-weight: bold;
+    color: #e365b1f9; 
+}
+/* Ensure the parent section hides anything that 'leaves' it */
+.quote-wrapper {
+    position: relative;
+    overflow: hidden; /* This makes the icon disappear when it scrolls past the section */
+}
 /*********** styling the box eg the catalog *********************/
 
 .wel_come h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-    
-    font-size: 65px;
-    text-align: center;
-    min-height: 100vh;
-
-    margin: 0 auto;
-    text-align: center;
-
-    padding: 5rem 5rem 10rem;
+  font-size: 70px;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 5rem;  
 }
+.archive-header {
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease; /* Optional: if you want to change color too */
+  display: inline-block;
+  margin: 0;
+}
+.playful-title {
+  color: rgb(0, 0, 0);
+  font-size: 5rem;
+  display: flex;
+  gap: 20px;
+  perspective: 1000px; /* Essential for the 3D flip */
+}
+
+.word {
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* --- DIGITAL ARCHIVE SECTION --- */
+
+.wel_come {
+  padding: 8vw 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Centers everything in the container */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+}
+
+/* Fluid, Expensive Header */
+.archive-header {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300; /* Initial weight for the GSAP scroll effect */
+  font-size: clamp(2.5rem, 8vw, 5rem); 
+  line-height: 1.1;
+  color: #1a1a1a; /* Sleek Black */
+  display: inline-block;
+}
+
+/* Responsive Paragraph */
+.archive-intro {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.7;
+  max-width: 700px;
+  color: #555;
+  margin: 2rem auto 3rem auto; /* Centers the block itself */
+}
+
+/* Signature Pink for Bold Text */
+.archive-intro strong {
+  color: #e365b1f9;
+  font-weight: 600;
+}
+
+/* Icon Row Layout */
+.skill-icons-row {
+  display: flex;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Icon Styling (Black to Pink) */
+.skill-icons-row i {
+  font-size: clamp(30px, 5vw, 45px); 
+  color: #1a1a1a; /* Default Black */
+  opacity: 0.8;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+/* Icon Hover State */
+.skill-icons-row i:hover {
+  opacity: 1;
+  color: #e365b1f9; /* Signature Pink */
+  transform: translateY(-10px) scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(252, 164, 166, 0.5));
+}
+
+
+/* --- CONSTRUCTION MODAL (Popup) --- */
+
+.construction-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px); /* Premium blur effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.pop-content {
+  background: #fff; 
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+  max-width: 450px;
+  border: 2px solid #e365b1f9; /* Pink border */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.pop-btn {
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.pop-btn:hover {
+  background: #e365b1f9;
+  transform: scale(1.05);
+}
+
 
 
 
 
 /* Container Styling ( product images, after the welcome ) */
 
-.project-layout{
+/* --- CLEANED PROJECT LAYOUT --- */
+.project-layout {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
-  gap: 7rem;
-  padding-bottom: 20rem;
+  /* Removed height: 100vh and overflow-y: scroll to fix vanishing */
+  gap: 0; 
   margin: 0 auto;
 }
 
-.project-layout {
-  scroll-snap-type: y proximity; /* 'proximity' is smoother/less 'glitchy' than mandatory */
-  scroll-behavior: smooth;
-  height: 100vh;
-  width: 100vw;
-  overflow-y: scroll;
-}
-
 .project-step {
-  height: 100vh;           /* Each section takes up the full screen */
-  
-  scroll-snap-align: start; /* Align the TOP of the section to the top of the screen */
+  height: 100vh; /* Each project takes exactly one full screen */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* This ensures the background color change is visible */
+  background: transparent; 
 }
 
+.image-link {
+  margin-bottom: 0; /* Let flex centering handle this */
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Ensure the body can transition colors smoothly */
+body {
+  transition: background-color 0.8s ease;
+  overflow-x: hidden;
+}
 
 
 /* Link Styling */
-.image-link {
-
- /* width: 250px; /* Adjust width as needed */
+.image-link{
+   /* width: 250px; /* Adjust width as needed */
  /* height: 350px; /* Adjust height as needed */
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.428);
   transition: transform 0.3s ease;
-  
-}
-
-.image-link{
-
   margin-bottom: 10rem;
   text-align: center;
   box-sizing: border-box;
@@ -364,7 +617,6 @@ h1 {
   aspect-ratio: 1;
 }
 
-
 .project-image{
   display: block;
   border-radius: 20px;
@@ -374,6 +626,162 @@ h1 {
  
 }
 
+/* Modal Background */
+/* === PROJECT MODAL SECTION (NEW "CANVA PORTRAIT" LAYOUT) === */
+
+/* 1. Light, blurred overlay to keep context */
+.modal-overlay {
+    display: none; /* JS toggles this to flex */
+    position: fixed;
+    inset: 0;
+    /* Soft bluish tint, very transparent, with strong blur */
+    background: rgba(220, 235, 255, 0.4); 
+    backdrop-filter: blur(10px); 
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0; /* JS handles fade in */
+    transition: opacity 0.4s ease;
+}
+
+/* 2. Modal Content Box - A portrait container, like your design */
+.modal-content {
+    background: #FCF8F8; /* matches your variable --white-color */
+    width: 90%;
+    max-width: 800px; /* Force a portrait-ish shape, like your Canva design */
+    height: auto;
+    max-height: 90vh; /* Don't cover everything */
+    border-radius: 30px; /* Gentle corner */
+    position: relative;
+    overflow-y: auto; /* allows scrolling inside the modal if text is long */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    
+    /* Animation initial state */
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 3. Handling the Active State (CSS for JS) */
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+/* 4. The Close Button */
+.close-modal {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 100;
+    color: #1d191b; /* Pink close button */
+  
+}
+
+/* 5. Modern "Single-Column" Layout (Portrait style) */
+.modal-modern-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* 6. Image Container (Portrait aspect) */
+.modal-image-container {
+    width: 100%;
+    height: 300px; /* Reduced height to keep the portrait feel */
+    overflow: hidden;
+    border-radius: 30px 30px 0 0; /* Round only top corners */
+}
+
+.modal-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image to fill the space beautifully */
+    display: block;
+}
+
+/* 7. Details Section (Text) */
+.modal-details {
+    padding: 30px;
+    color: #1a1a1a;
+}
+
+.modal-details h2 {
+    font-size: 2.2rem;
+    color: #e365b1; /* Your Pink */
+    margin-bottom: 5px;
+}
+
+.project-tagline {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* 8. Tech Icons Section (Mini, row-based) */
+.tech-used-section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tech-icons-row {
+    display: flex;
+    gap: 15px; /* space between icons */
+    font-size: 1.5rem; /* size of the mini icons */
+    color: #555;
+}
+
+/* 9. Key Features (List style) */
+.modal-info-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(227, 101, 177, 0.3); /* faint pink underline */
+    padding-bottom: 5px;
+}
+
+#modalFeatures li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* 10. Action Buttons (Reusing your styles) */
+.modal-btns {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+/* Ensure these links behave like buttons */
+.modal-btns a {
+    flex: 1; /* split the space evenly */
+    text-align: center;
+    padding: 12px 20px;
+    font-weight: 600;
+}
+
+/* A subtle outline button for the "Code" link */
+.btn-outline {
+    border: 2px solid #ea6ed5; /* match your con-button pink */
+    color: #ea6ed5;
+    border-radius: 10px;
+}
+
+.btn-outline:hover {
+    background-color: rgba(234, 110, 213, 0.1); /* light pink fade on hover */
+}
 /* Hover Text Styling */
 .hover-text {
   position: absolute;
@@ -408,46 +816,57 @@ h1 {
     margin: 0 auto;
     padding: 8rem 6rem;
     flex-direction: column;
-    align-items: center; 
+    align-items: stretch;
     
 }
 
 .contact-title{
     
     font-size: 40px;
+    text-align: center;
 }
 .contact-des{ 
     font-size: 19px;
     padding-top: 1rem; 
-    word-wrap: break-word;       
+    word-wrap: break-word; 
+    text-align: center;      
 }
 
 .contact-form {
-    flex: 1; 
+    flex: 1;
+    
 }
 
 .contact-form form {
     display: flex;
     flex-direction: column;
+    width: 70%;
+    max-width: 600px;
+    
 }
 
 .contact-form label, .contact-form input, .contact-form textarea, .contact-form button {
     margin-bottom: 15px;
+    
 }
 
 .contact-form, input, textarea{
  
-  margin-top: -1rem;
+ margin-top: -1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  
 }
 
 .contact-form input, .contact-form textarea {
-   
+
     padding: 20px;
     box-sizing: border-box;
+    width: 100%;   
 }
 
 /* === styling the button == */
-
 button {
   margin-top: 1rem;
     padding: 15px;
@@ -480,15 +899,174 @@ background-color: #e5a3af;
 
 /* == work with me section == */
 
-.work-with-me{
-  text-align: left;
+.work-with-me-container {
+  position: relative;
+  min-height: 140vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f7a4d89c 0%, rgba(247, 164, 216, 0.7) 100%);
+  padding: 100px 5%;
+}
+
+.work-with-me {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.work-text {
+  color: rgb(3, 3, 3);
+  z-index: 10;
+  position: relative;
+  text-align: center;
   text-transform: uppercase;
   width: 100%;
+  font-size: 3rem !important;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -2px;
+  margin: 0;
+  will-change: transform, opacity;
+  opacity: 0.2;
+  transform: translateX(-200px) scale(1);
+  transform-origin: center center;
+}
+
+.work-text span {
+  display: block;
+}
+
+.floating-coil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(180px) rotate(-20deg) rotateX(15deg) rotateY(-12deg);
+  width: 500px;
+  height: 500px;
+  z-index: 15;
+  will-change: transform, opacity;
+  opacity: 0.25;
+  transform-style: preserve-3d;
+}
+
+.floating-coil path {
+  stroke: width 20px;
+  
 }
 
 /* ==== footer page ==== */
+.footer-section {
+  margin-top: 10rem;
+  padding: 100px 5% 40px 5%; /* Adds space around the whole footer */
+  background-color: #f9f7f4; /* Using a light off-white  */
+  font-family: sans-serif;
+  color: #1a1a1a;
+  min-height: auto;
+  
+}
 
-/* Footer styling */
+.footer-main {
+  display: flex;
+  justify-content: space-between; /* Pushes left to the left, right to the right */
+  align-items: flex-start;
+  margin-bottom: 80px; /* Space before the copyright line */
+}
+
+/* LEFT SIDE */
+.footer-left {
+  flex: 1; /* Takes up available space */
+  max-width: 50%;
+}
+
+.footer-title {
+  font-size: 3rem;
+  font-weight: 500;
+  margin: 0 0 40px 0; /* More space between text and email */
+  line-height: 1.1;
+}
+
+.email-wrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #1a1a1a; /* The line under the email area */
+  padding-bottom: 10px;
+  width: fit-content;
+}
+
+.email-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2rem;
+  margin-right: 20px;
+}
+
+.email-arrow {
+  font-size: 1.5rem;
+}
+
+/* RIGHT SIDE */
+.footer-right {
+  display: flex;
+  gap: 80px; /* Space between PAGE and CONNECT columns */
+}
+
+.column-heading {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 1.1rem;
+}
+
+/* COPYRIGHT BAR */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 30px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.bottom-logo {
+  font-weight: bold;
+  color: #e365b1f9; /* pink */
+}
+.footer-column ul li a {
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: color 0.3s ease; /* Makes the color change smooth */
+}
+
+.footer-column ul li a:hover {
+  color: #fc66cf; /* A soft, chic tan/gold color or a floral pink! */
+  text-decoration: underline;
+}
+
+/* old Footer styling *
 .footer {
   width: 100%;
   background-color: #333;
@@ -497,14 +1075,15 @@ background-color: #e5a3af;
   padding: 10rem 5rem 10rem;
   overflow: hidden;
   font-family: Arial, sans-serif;
-}
+} */
 
 /* Moving text animation */
 .moving-text {
   display: inline-block;
   white-space: nowrap;
-  color: #e7adde;
+  color: #e365b1f9;
   font-weight: bold;
+  margin-top: 50px;
   font-size: 88px;
   animation: scroll-text 8s linear infinite;
  
@@ -519,14 +1098,15 @@ background-color: #e5a3af;
   }
 }
 
-/* Thanks message */
+/* Thanks message *
 .footer-h1 {
   font-weight: bold;
   font-size: 4rem;
- 
-}
 
-/* YouTube link button */
+} 
+*/
+
+/* YouTube link button 
 .buttons a {
   display: inline-block;
   padding: 2rem 5rem 2rem;
@@ -543,9 +1123,9 @@ background-color: #e5a3af;
 .buttons a:hover {
   background-color: #e7adde;
   transform: scale(1.1);
-}
+} 
 
-/* Navigation links */
+/* Navigation links *
 nav ul {
   list-style-type: none;
   padding: 0;
@@ -564,7 +1144,7 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #e7adde;
-}
+} */
 
 /* Rotating image */
 .rotating-image img {
@@ -602,9 +1182,335 @@ nav ul li a:hover {
 }
 
 
+/* moblie sizing */
+/* --- Hero Mobile Fixes --- */
+@media (max-width: 768px) {
+  .home__title {
+    font-size: 2.5rem;
+    max-width: 700px;
+  }
+  .home__description {
+    margin-top: 30px;
+    font-size: 1rem !important;
+    padding: 0 15px;
+    max-width: 450px;
+  }
+.butt-parent{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   padding: 0 60px;
+}  
 
+.quote{
+  font-size: 1rem !important;
+  max-width: 800px;
+}
+.icon-code{
+  font-size: 2.5rem !important;
+  width: 10% !important;
+}
 
+.flower-icon{
+  margin-top: -100px;
+  position: relative;
+  
+  
+}
 
+}
+
+/* --- RESPONSIVENESS (Mobile Fixes) --- */
+
+@media (max-width: 768px) {
+  .wel_come {
+    padding: 60px 20px;
+     text-align: left;
+    
+  }
+  
+  
+  .archive-intro {
+    text-align: center; /* Keeps text centered on smaller screens */
+    margin-bottom: 2.5rem;
+  }
+
+  .skill-icons-row {
+    justify-content: flex-start;
+    gap: 20px; /* Tighter gap for mobile phones */
+  }
+  .playful-title{
+    font-size: 2rem !important;
+    
+  }
+
+  /* ... your existing mobile styles ... */
+
+  .project-layout {
+    width: 100%;
+    padding: 0 20px; /* Gives the images some breathing room from the screen edges */
+  }
+
+  .project-step {
+    height: 70vh; /* Lets the height adjust based on the image size */
+    margin-bottom: 60px; /* Adds space between projects */
+  }
+
+  .image-link {
+    width: 100%; /* Makes the card fill the width of the screen */
+    max-width: 320px; /* Prevents it from getting TOO big on larger phones */
+     /* Gives it a fixed "Portrait" height */
+    margin: 0 auto 30px auto; /* Centers the card */
+  }
+
+  .image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This stops the 'crushing'—it crops rather than squeezes */
+    object-position: center;
+  }
+}
+
+/* --- ADDITIONAL RESPONSIVE IMPROVEMENTS --- */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 18px 24px;
+  }
+
+  .logo-name {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  }
+
+  .home__container {
+    padding: 0 24px;
+  }
+
+  .home__title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    margin-bottom: 1rem;
+  }
+
+  .home__description {
+    max-width: 100%;
+  }
+
+  .butt-parent {
+    gap: 1rem;
+  }
+
+  .contact-container {
+    padding: 4rem 2rem;
+  }
+
+  .footer-section {
+    padding: 80px 4%;
+  }
+
+  .footer-main {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .footer-left,
+  .footer-right {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .work-with-me-container {
+    min-height: auto;
+    padding: 60px 2rem;
+  }
+
+  .work-text {
+    font-size: clamp(4rem, 12vw, 7rem) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 18px;
+  }
+
+  .nav-overlay {
+    padding: 40px 20px;
+  }
+
+  .nav-links a {
+    font-size: 2rem;
+  }
+
+  .home__button,
+  .second-button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+
+  .butt-parent {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .home__description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .quote-wrapper {
+    min-height: auto;
+    padding: 30px 20px;
+  }
+
+  .quote h1 {
+    min-height: auto;
+    font-size: clamp(2rem, 6vw, 3.3rem);
+  }
+
+  .quote {
+    margin-top: 120px;
+    margin-bottom: 40px;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    line-height: 1.2;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .icon-setting {
+    left: 50%;
+    top: 8%;
+    transform: translate(-50%, 0);
+    font-size: 70px;
+    opacity: 1;
+    z-index: 0;
+  }
+
+  .flower-icon {
+    width: 90px;
+    height: auto;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.15));
+  }
+
+  .icon-code {
+    font-size: 3rem !important;
+    bottom: -100px;
+  }
+
+  .skill-icons-row {
+    gap: 1rem;
+  }
+
+  .project-layout {
+    margin-top: 6rem;
+  }
+
+  .project-step {
+    min-height: auto;
+    padding: 2rem 0;
+    margin-bottom: 4.5rem;
+  }
+
+  .image-link {
+    width: 85%;
+    max-width: 420px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .image-link img {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .modal-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-form form {
+    width: 100%;
+  }
+
+  .contact-container {
+    padding: 3rem 1.5rem;
+    gap: 2.5rem;
+  }
+
+  .wel_come h1 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+
+  .archive-intro {
+    margin: 1rem auto 2rem auto;
+    max-width: 100%;
+  }
+
+  .footer-right {
+    gap: 20px;
+  }
+
+  .moving-text {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    margin-top: 20px;
+  }
+
+  .work-with-me-container {
+    min-height: auto;
+    padding: 60px 2rem;
+  }
+
+  .floating-coil {
+    width: 320px;
+    height: 320px;
+    margin-bottom: -80px;
+  }
+}
+
+@media (max-width: 540px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .home__title {
+    font-size: 2.2rem;
+  }
+
+  .archive-header,
+  .work-text {
+    font-size: clamp(2rem, 8vw, 3.5rem) !important;
+  }
+
+  .work-with-me-container {
+    padding: 40px 1rem;
+    min-height: 70vh;
+  }
+
+  .floating-coil {
+    width: 250px;
+    height: 250px;
+    margin-bottom: -60px;
+  }
+
+  .footer-section {
+    padding: 60px 4%;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+  }
+}
 
 
 
