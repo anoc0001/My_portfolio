@@ -5,118 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashley's portfolio</title>
 
-    <!-- ===css ==-->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- =====BOX ICONS===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- ==== font awesome ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <!--<link rel="stylesheet" href="path-to-your-css-file.css"> -->
-
-    
 </head>
 
 <body>
-  <!-- === Header === -->
-   <header class="navbar">
+  <!-- Nar bar starts here -->
+    <header class="navbar">
   <div class="logo-container">
     <h1 class="logo-name">Ashley.A</h1>
-    <nav class="dropdown-menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Me</a>
-      <a href="resume.html">Resume</a>
-    </nav>
   </div>
 
-  <div class="email-container">
-    <a href="mailto:anochiriashley@gmail.com" class="email-link">
-      <span class="default-text">anochiriashley@gmail.com</span>
-      <span class="hover-email">Contact Me</span>
-    </a>
+  <div class="menu-toggle" id="mobile-menu">
+    <i class="fa-solid fa-bars"></i>
   </div>
-</header>
 
-   <main class="hero">
-    <!-- ====== landing page ===== -->
-   <!-- <div class="float-img">
-      <img src="/images/ball.png" alt="">
-     </div> -->
-     
-    <div class="home__container">
-     
-    <section class="home" id="home"> 
-        <div class="home__data">
-          <h1 class="home__title">Hi, It's Ashley, <br>
-            I'm a <br> <span id="dynamic-text">designer</span></h1>
-      
-        <p class="home__description">
-          I craft engaging digital experiences through design and code.<br> Dive into my latest work and see what I've been up to! </p>
-          <!-- ==== linked button ====-->
-       <a href="catalog.html" class="home__button"> view project</a>
+  <nav class="nav-overlay" id="nav-menu">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="mailto:anochiriashley@gmail.com" class="menu-email">Contact Me</a></li>
+    </ul>
+  </nav>
+</header> <!-- nav bar ends here-->
 
-         <!----=== font awesome icon === -
+  <main class="hero">
+  <div class="video-container">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="video/download (1).mp4" type="video/mp4">
+    </video>
+    <canvas id="particle-canvas"></canvas>
+  </div>
 
-         <div class="font-icon">
-          <a href=""><i class="fa-brands fa-github"></i></a>
-          <a href=""><i class="fa-brands fa-youtube"></i></a>
-          <a href=""><i class="fa-brands fa-instagram"></i></a>
-           
-      </div>  -->
+  <div class="home__container">
+    
+      <div class="home__data">
+        <h1 class="home__title">Hi, It's <span class="name-style">Ashley</span>, I'm a <br> <span id="dynamic-text">designer</span></h1>
+        <p class="home__description">I craft engaging digital experiences through design and code.</p>
+        <div class="butt-parent">
+                  <a href="#projects" class="home__button">view project</a> <a href="about.html" class="second-button">About me</a>
 
         </div>
-        </section>
       </div>
-     
-   
-   </main>
+    
+  </div>
+</main>
 
-   <div class="quote" id="pro">
-    <h1>The best code is not just functional, but an experience.</h1>
-   </div>
+   <div class="quote-wrapper">
+  <div class="parallax-icon big-half-circle"></div>
+  <div class="parallax-icon icon-setting">
+    <svg class="flower-icon" viewBox="0 0 248 248" width="100" height="100" style="overflow: visible;">
+  <defs>
+    <linearGradient id="vibrantGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fc5bae; stop-opacity:2" />
+      <stop offset="40%" style="stop-color:#ff78bc; stop-opacity:1" /> 
+      <stop offset="100%" style="stop-color:#424142; stop-opacity:1" />
+    </linearGradient>
 
+    <filter id="cleanGrain" x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox">
+      <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="2" result="noise" />
+      <feComposite operator="in" in2="SourceGraphic" result="clippedNoise" />
+      <feBlend mode="overlay" in="SourceGraphic" in2="clippedNoise" opacity="0.4" />
+    </filter>
+  </defs>
+
+  <path 
+    fill="url(#vibrantGradient)" 
+    filter="url(#cleanGrain)"
+    fill-rule="evenodd" 
+    d="M62 124C27.7583 124 0 151.758 0 186C0 220.242 27.7583 248 62 248C96.2417 248 124 220.242 124 186C124 220.242 151.758 248 186 248C220.242 248 248 220.242 248 186C248 151.758 220.242 124 186 124C220.242 124 248 96.2417 248 62C248 27.7583 220.242 0 186 0C151.758 0 124 27.7583 124 62C124 27.7583 96.2417 0 62 0C27.7583 0 0 27.7583 0 62C0 96.2417 27.7583 124 62 124Z" 
+  />
+</svg>
+  </div>
+  <div class="parallax-icon icon-code">&lt;/&gt;</div>
+
+  <div class="quote" id="pro">
+      <h1>The Best Code Is Not Just Functional, But An Experience</h1>
+  </div>
+</div>
+
+  <!-- <div class="wel_come">
+    <h1 class="archive-header">Digital Archive</h1>  
+   </div> -->
    <div class="wel_come">
-    <h1>Welcome To Ashley's Creative Garden</h1>  
-   </div>
+  <h1 class="playful-title">
+    <span class="word">Creative</span>
+    <span class="word">Digital</span>
+    <span class="word">Archive</span>
+  </h1>
+  <p class="archive-intro">
+    This is a curated collection of my work in <strong>Web Development</strong> and <strong>Visual Design</strong>. 
+    While some case studies are still being documented, these projects demonstrate my ability to bridge 
+    high-end aesthetics with technical logic—from GSAP motion and JSON data to rigorous debugging.
+  </p>
+
+  <div class="skill-icons-row">
+    <i class='bx bxl-html5' title="HTML5"></i>
+    <i class='bx bxl-css3' title="CSS3"></i>
+    <i class='bx bxl-javascript' title="JavaScript"></i>
+    <i class="fa-solid fa-code-merge" title="JSON & Logic"></i> <i class="fa-solid fa-wand-magic-sparkles" title="Aesthetic Design"></i> 
+</div>
+</div>
 
    <div class="project-layout" id="projects"> 
-    <section class="project-step">
-    <a href="Floralshop.html" class="image-link">
-      <span class="project-image">
-        <img src="/images/ux 1.jpg" alt="Web development image">
-      </span>
-        <span class="hover-text">Web development</span>
-    </a>
+    <section class="project-step" >
+        <div class="image-link" onclick="openProject('peony')">
+            <span class="project-image"><img src="/images/Untitled (600 x 800 px) (2).jpg" alt="Web development"></span>
+            <span class="hover-text">Peony web (E-commerce)</span>
+        </div>
     </section>
 
-    <section class="project-step">
-    <a href="target-page2.html" class="image-link">
-      <span class="project-image">
-        <img src="./images/ux.jpg" alt="UX/UI design image">
-      </span>
-        <span class="hover-text">UX/UI design</span>
-    </a>
+    <section class="project-step" >
+        <div class="image-link" onclick="openProject('graphic')">
+            <span class="project-image"><img src="/images/graphics-cover.png" alt="Graphic design"></span>
+            <span class="hover-text">Graphic Design</span>
+        </div>
     </section>
 
-   <section class="project-step">
-    <a href="target-page3.html" class="image-link">
-      <span class="project-image">
-        <img src="/images/ux 2.jpg" alt="Graphic image">
-      </span>
-        <span class="hover-text">Graphic</span>
-    </a>
+    <section class="project-step" >
+        <div class="image-link" onclick="openProject('uxui')">
+            <span class="project-image"><img src="./images/ux.jpg" alt="UX/UI design"></span>
+            <span class="hover-text">UX/UI Design</span>
+        </div>
     </section>
 
-    <section class="project-step">
-    <a href="target-page4.html" class="image-link">
-      <span class="project-image">
-        <img src="/images/ux 3.jpg" alt="Motion graphic image">
-      </span>
-        <span class="hover-text">Motion Graphic</span>
-    </a>
-    </section>
 
+
+        <section class="project-step">
+        <div class="image-link" onclick="openProject('motion')">
+            <span class="project-image"><img src="/images/ux 3.jpg" alt="Motion graphics"></span>
+            <span class="hover-text">Motion Graphics</span>
+        </div>
+    </section>
+</div>
+<div id="projectModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        
+        <div class="modal-modern-layout">
+            <div class="modal-image-container">
+                <img id="modalImg" src="" alt="Project Preview">
+            </div>
+
+            <div class="modal-details">
+                <h2 id="modalTitle">Project Name</h2>
+                <p id="modalTagline" class="project-tagline">Project Category</p>
+                <p id="modalDescription">Detailed description for employers goes here...</p>
+                
+                <div class="tech-used-section modal-info-section">
+                    <h3>Technologies Used</h3>
+                    <div id="techIconsRow" class="tech-icons-row">
+                        </div>
+                </div>
+
+                <div class="modal-info-section">
+                    <h3>Key Features</h3>
+                    <ul id="modalFeatures">
+                        </ul>
+                </div>
+
+                <div class="modal-btns">
+                    <a id="liveDemoBtn" href="#" target="_blank" class="con-button">Live Demo</a>
+                    <a id="githubCodeBtn" href="#" target="_blank" class="btn-outline">View Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- === contact me section =====-->
@@ -130,10 +190,10 @@
     <div class="contact-form">
         <form action="#" method="POST">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
             
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required placeholder="Your Email">
             
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
@@ -141,7 +201,6 @@
               <p><i class="fas fa-envelope"></i> anochiriashley@gmail.com</p>
           </div>
           
-
             <button class="con-button" type="submit">Send</button>
         </form>
     </div>
@@ -149,69 +208,85 @@
 </section>
 
 <!-- work with me section -->
-<section>
+<section class="work-with-me-container">
   <div class="work-with-me">
-    <h1>work<br>
-      with<br>
-       me</h1>
+    <svg class="floating-coil" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50,10 C80,40 20,60 50,90 C80,120 20,140 50,170" 
+            stroke="#ff69b4" 
+            stroke-width="8" 
+            fill="none" 
+            stroke-linecap="round" />
+    </svg>
+    
+    <h2 class="work-text">Work <br> With <br> Me</h2>
   </div>
-     
 </section>
 
 <!-- === footer== -->
-   <footer class="footer">
-   
-    <h1 class="footer-h1">That’s a wrap.<br> Thanks for the visit!</h1>
+<footer class="footer-section">
+  <div class="footer-main">
     
-    
-    <div class="buttons">
-        <a href="https://www.youtube.com/@Ashley_Anochiri" target="_blank">Curious who I am? Tap here to find out!
-          </a>
+    <div class="footer-left">
+      <h1 class="footer-title">That's a wrap. Thanks for the visit.</h1>
+      <div class="email-wrapper">
+        <a href="mailto:hello@ashley.com" class="email-link">Get in touch with me</a>
+        <span class="email-arrow">→</span>
+      </div>
     </div>
-    <nav>
+
+    <div class="footer-right">
+      <div class="footer-column">
+        <p class="column-heading">PAGE</p>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
-    </nav>
+      </div>
+
+      <div class="footer-column">
+        <p class="column-heading">CONNECT</p>
+        <ul>
+          <li><a href="https://github.com/anoc0001" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/ashley-anochiri-7246a1188/" target="_blank">LinkedIn</a></li>
+          <li><a href="http://www.youtube.com/@Ashley_Anochiri" target="_blank">YouTube</a></li>
+          <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Ashley. All rights reserved.</p>
+    <div class="bottom-logo">
+      <span>A</span> 
+    </div>
+  </div>
+
     
     <div class="moving-text">
       <h1> ⋆.𐙚 ̊ Ashley Anochiri ⋆.𐙚 ̊ Ashley Anochiri ⋆.𐙚 ̊ Ashley Anochiri ⋆.𐙚 ̊ Ashley Anochiri ⋆.𐙚 ̊ Ashley Anochiri ⋆.𐙚 ̊ Ashley Anochiri ⋆.𐙚 ̊ Ashley Anochiri</h1>  </div>
-
-
-    
 </footer>
 
-<!--===== GSAP =====-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-
-<!-- === Background Color Scroll Logic === -->
-<!--<script>
-  const sectionColors = {
-    home: "#F4C2C2",           // Baby Pink
-    projects: "#fefed4",       // Baby Yellow
-    contact: "#FFFFFF",         // White
-  };
-
-  window.addEventListener("scroll", () => {
-    const sections = document.querySelectorAll("section, .container, .contact-container");
-
-    for (const section of sections) {
-      const rect = section.getBoundingClientRect();
-      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-        const id = section.id || section.closest("div")?.id;
-        if (sectionColors[id]) {
-          document.body.style.backgroundColor = sectionColors[id];
-        }
-      }
-    }
-  });
-</script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 <script src="script.js"></script>
 
-
+<!-- for the pop-->
+<div id="construction-modal" class="construction-popup">
+  <div class="pop-content">
+    <i class="fa-solid fa-sparkles" style="color: #fca4a6; font-size: 2rem; margin-bottom: 15px;"></i>
+    
+    <h2>Archive Under Construction</h2>
+    
+    <p>
+      I’m currently refining my <strong>Digital Archive</strong> to ensure every interaction is pixel-perfect. 
+      Some case studies are still being coded—thanks for your patience while I build!
+    </p>
+    
+    <button id="close-popup" class="pop-btn">Explore Finished Works</button>
+  </div>
+</div>
 </body>
 </html>

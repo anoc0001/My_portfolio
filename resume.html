@@ -2,55 +2,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Resume</title>
   <link rel="stylesheet" href="resume.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
 <body>
-  <!-- === Header === -->
-  <header class="1-header">
-    
-    <nav class="nav bd-grid">
+  <!-- Nar bar starts here -->
+    <header class="navbar">
+  <div class="logo-container">
+    <h1 class="logo-name">Ashley.A</h1>
+  </div>
 
-      <div>
-        <a href="index.html" class="nav__logo">Ashley</a>
-      </div>
+  <div class="menu-toggle" id="mobile-menu">
+    <i class="fa-solid fa-bars"></i>
+  </div>
 
-      <div class="nav__toggle" id="nav-toggle">
-        <i class='bx bx-menu'></i>
-    </div>
+  <nav class="nav-overlay" id="nav-menu">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="mailto:anochiriashley@gmail.com" class="menu-email">Contact Me</a></li>
+    </ul>
+  </nav>
+</header> <!-- nav bar ends here-->
 
-    <div class="nav__menu" id="nav-menu">
-      <div class="nav__close" id="nav-close">
-          <i class='bx bx-x'></i>
-      </div>
-
-      <ul class="nav__list">
-          <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li>
-          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
-          <li class="nav__item"><a href="catalog.html" class="nav__link">Catalog</a></li>
-          <li class="nav__item"><a href="resume.html" class="nav__link">Resume</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-      </ul>
-  
-    </div>  
-        
-    </nav>
-   </header> 
 
    
-
    <main>
     <!-- === resume image === -->
      <div class="resume">
-      <img src="images/wed dev Resume.png" alt="" >
+      <img src="images/Ashle-Anochiri-resume.png" alt="" >
   <!-- === downlode cv === -->
-      <a href="/files/YourName_CV.pdf" download="YourName_CV.pdf" class="download-button">Download Resume</a>
+      <a href="/images/Ashley-Anochiri-Frontend Resume.pdf" download="Ashley-Anochiri-Frontend Resume.pdf" class="download-button">Download Resume</a>
      </div>
 
    
      
 
    </main>
-  
+ 
+    <script src="script.js"></script>
 </body>
 </html>

@@ -6,31 +6,52 @@
     <title>Peony | Luxury Floral Catalog</title>
     <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="flower-catalog.css">
+    <link rel="stylesheet" href="floralshop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="navbar__logo"><a href="index.html">Peony 🌸</a></div>
-        <ul class="navbar__links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="navbar__icons">
-            <div class="icon-wrapper" id="cart-trigger" style="cursor: pointer;">
-                <span>Cart</span>
-                <b id="cart-count">(0)</b>
-            </div>
+        <div class="navbar__logo"><a href="Floralshop.html">Peony 🌸</a></div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
         </div>
-    </nav>
+        
+        <ul class="navbar__links" id="nav-menu">
+            <li><a href="lifeofthebloom.html">Life of the bloom</a></li>
+            <li><a href="giftofchoice.html">The Gift of Choice</a></li>
+            <li class="has-dropdown">
+                <a href="FLower-catalog.html">The collection</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">A Gesture of love</a></li>
+                    <li><a href="#">A Moment of Calm</a></li>
+                    <li><a href="#">A Grand Celebration</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    <div class="navbar__icons">
+        <a href="#" class="nav-icon-link">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        </a>
+        <div class="icon-wrapper" id="fav-trigger" style="cursor: pointer;">
+            <svg class="icon" viewBox="0 0 24 24" style="fill: none; stroke: #1a1a1a; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span id="fav-count">(0)</span>
+        </div>
+        <div class="icon-wrapper" id="cart-trigger" style="cursor: pointer;">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            <span id="cart-count">0</span>
+        </div>
+    </div>
+</nav>
 
     <div id="cart-drawer" class="cart-drawer">
         <div class="cart-header">
             <h2>Your Selection</h2>
             <button id="close-cart">✕</button>
         </div>
-        <div id="cart-items-list">
-            </div>
+        <div id="cart-items-list"></div>
         <div class="cart-footer">
             <div class="total-row">
                 <span>Total:</span>
@@ -40,22 +61,80 @@
         </div>
     </div>
 
+    <div id="fav-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Favorites</h2>
+            <button id="close-fav">✕</button>
+        </div>
+        <div id="fav-items-list"></div>
+    </div>
+
     <main class="catalog-container">
         <header class="catalog-intro">
-            <h1 class="catalog-title">THE CATALOG</h1>
+            <h1 class="catalog-title">The collection</h1>
             <div class="search-wrapper">
                 <input type="text" id="flower-search" placeholder="Search for a specific bloom or jar...">
             </div>
         </header>
 
         <section class="catalog-section">
-            <h2 class="category-header">01 / BIRTHDAY</h2>
+            <h2 class="category-header">A Gesture of love</h2>
             <div class="product-menu-grid">
                 <div class="menu-item" data-name="Peony Mason Jar" data-price="45">
-                    <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=800" alt="Peonies in Mason Jar">
+                    <img src="Flower shop/bouquet1.jpg" alt="Peonies in Mason Jar">
                     <div class="menu-details">
-                        <h3>Peony Mason Jar</h3>
+                        <h3>Bouquet darkred</h3>
                         <p class="price">$45</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="Sunset Bouquet" data-price="45">
+                    <img src="Flower shop/bouquet 2.jpg" alt="sunset Boquet in Vase">
+                    <div class="menu-details">
+                        <h3>Sunset Bouquet</h3>
+                        <p class="price">$45</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="Gerbera daisies" data-price="45">
+                    <img src="Flower shop/bouquet3.jpg" alt="Gerbera daisies bouquet">
+                    <div class="menu-details">
+                        <h3>Gerbera daisies</h3>
+                        <p class="price">$45</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-name="pink & orange bouquet" data-price="55">
+                    <img src="Flower shop/bouquet4.jpg" alt="pink & orange mix bouquet">
+                    <div class="menu-details">
+                        <h3>pink & orange bouquet</h3>
+                        <p class="price">$55</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-name="Enchanted fusion bouquet" data-price="105">
+                    <img src="Flower shop/bouquet5.jpg" alt="Enchanted fusion bouquet bloom">
+                    <div class="menu-details">
+                        <h3>Enchanted fusion bouquet</h3>
+                        <p class="price">$105</p>
                         <div class="qty-selector">
                             <button class="qty-btn minus">-</button>
                             <span class="qty-num">0</span>
@@ -67,12 +146,103 @@
         </section>
 
         <section class="catalog-section">
-            <h2 class="category-header">02 / ANNIVERSARY</h2>
+            <h2 class="category-header">A Moment of Calm</h2>
             <div class="product-menu-grid">
                 <div class="menu-item" data-name="Blush Glass Vase" data-price="65">
-                    <img src="https://images.unsplash.com/photo-1561131103-6893e4a2b904?q=80&w=800" alt="Roses in Glass Vase">
+                    <img src="Flower shop/moment-of-clam-1.jpg" alt="Roses in Glass Vase">
                     <div class="menu-details">
                         <h3>Blush Glass Vase</h3>
+                        <p class="price">$65</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="cloud-spun" data-price="65">
+                    <img src="Flower shop/moment-of-clam-2.jpg" alt="cloud-spun bouquet">
+                    <div class="menu-details">
+                        <h3>cloud-spun</h3>
+                        <p class="price">$65</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="Blush Glass Vase" data-price="65">
+                    <img src="Flower shop/moment-of-clam-3.jpg" alt="Roses in Glass Vase">
+                    <div class="menu-details">
+                        <h3>Blush Glass Vase</h3>
+                        <p class="price">$65</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="fusion for the calm" data-price="60">
+                    <img src="Flower shop/moment-of-clam-4.jpg" alt="fusion for the calm bouquet">
+                    <div class="menu-details">
+                        <h3>Fusion for the calm</h3>
+                        <p class="price">$60</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="stardust bouquet" data-price="75">
+                    <img src="Flower shop/moment-of-clam-5.jpg" alt="stardust bb bouquet">
+                    <div class="menu-details">
+                        <h3>stardust bouquet</h3>
+                        <p class="price">$75</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="the whisper of blush" data-price="85">
+                    <img src="Flower shop/moment-of-clam-6.jpg" alt="the whisper of blush bouquet">
+                    <div class="menu-details">
+                        <h3>The whisper of Blush</h3>
+                        <p class="price">$85</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="All things bright and beautiful" data-price="105">
+                    <img src="Flower shop/moment-of-clam-7.jpg" alt="all things bright and beautiful bouquet">
+                    <div class="menu-details">
+                        <h3>All things bright and beautiful</h3>
+                        <p class="price">$105</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-name="Coral & Pearl Whisper" data-price="65">
+                    <img src="Flower shop/gif-flower2.jpg" alt="Coral & Pearl Whisper bouquet">
+                    <div class="menu-details">
+                        <h3>Coral & Pearl Whisper</h3>
                         <p class="price">$65</p>
                         <div class="qty-selector">
                             <button class="qty-btn minus">-</button>
@@ -85,12 +255,155 @@
         </section>
 
         <section class="catalog-section">
-            <h2 class="category-header">03 / BRIDAL</h2>
+            <h2 class="category-header">A Grand Celebration</h2>
             <div class="product-menu-grid">
-                <div class="menu-item" data-name="Orchid Ceramic" data-price="85">
-                    <img src="https://images.unsplash.com/photo-1563245332-6902b890833a?q=80&w=800" alt="Orchids in Ceramic">
+                <div class="menu-item" data-name="Aurora" data-price="85">
+                    <img src="Flower shop/bou3.png" alt="Aurora bouquet">
                     <div class="menu-details">
-                        <h3>Orchid Ceramic</h3>
+                        <h3>Aurora(The first hit of light)</h3>
+                        <p class="price">$85</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-item" data-name="Lush Garden" data-price="85">
+                    <img src="Flower shop/Grand-celebration-2.jpg" alt="Lush Garden bouquet">
+                    <div class="menu-details">
+                        <h3>Lush Garden</h3>
+                        <p class="price">$85</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-item" data-name="Golden solstice" data-price="200">
+                    <img src="Flower shop/Grand-celebration-3.jpg" alt="Golden solstice bouquet">
+                    <div class="menu-details">
+                        <h3>Golden Solstice</h3>
+                        <p class="price">$200</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-item" data-name="elegance Bunch" data-price="85">
+                    <img src="Flower shop/Grand-celebration-4.jpg" alt="Elegance Bunch bouquet">
+                    <div class="menu-details">
+                        <h3>Elegance Bunch</h3>
+                        <p class="price">$85</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-item" data-name="Serenity bloom" data-price="85">
+                    <img src="Flower shop/Grand-celebration-5.jpg" alt="Serenity bloom bouquet">
+                    <div class="menu-details">
+                        <h3>Serenity Bloom</h3>
+                        <p class="price">$85</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-item" data-name="Saffron Haze" data-price="85">
+                    <img src="Flower shop/Grand-celebration-6.jpg" alt="Saffron Haze bouquet">
+                    <div class="menu-details">
+                        <h3>Saffron Haze</h3>
+                        <p class="price">$85</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-item" data-name="Meadow Grand" data-price="85">
+                    <img src="Flower shop/Grand-celebration-7.jpg" alt="Meadow Grand bouquet">
+                    <div class="menu-details">
+                        <h3>Meadow Grand</h3>
+                        <p class="price">$85</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-item" data-name="Velvet Sky" data-price="155">
+                    <img src="Flower shop/Grand-celebration-8.png" alt="Velvet Sky bouquet">
+                    <div class="menu-details">
+                        <h3>Velvet Sky</h3>
+                        <p class="price">$155</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-item" data-name="Alabaster cloud" data-price="85">
+                    <img src="Flower shop/Grand-celebration-9.png" alt="Alabaster cloud bouquet">
+                    <div class="menu-details">
+                        <h3>Alabaster Cloud</h3>
+                        <p class="price">$85</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-item" data-name="Chroma Lily" data-price="85">
+                    <img src="Flower shop/Grand-celebration-10.png" alt="Chroma Lily bouquet">
+                    <div class="menu-details">
+                        <h3>Chroma Lily</h3>
+                        <p class="price">$85</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-item" data-name="Blush Meadow" data-price="85">
+                    <img src="Flower shop/Grand-celebration-1.jpg" alt="Blush Meadow bouquet">
+                    <div class="menu-details">
+                        <h3>Blush Meadow</h3>
+                        <p class="price">$85</p>
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-num">0</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-item" data-name="Willow Whisper" data-price="85">
+                    <img src="Flower shop/Grand-celebration-12.png" alt="Willow Whisper bouquet">
+                    <div class="menu-details">
+                        <h3> Eclectic arrangement: Orchid, Lilies etc</h3>
                         <p class="price">$85</p>
                         <div class="qty-selector">
                             <button class="qty-btn minus">-</button>
@@ -109,5 +422,6 @@
     </div>
 
     <script src="flower-catalog.js"></script>
+   
 </body>
 </html>
