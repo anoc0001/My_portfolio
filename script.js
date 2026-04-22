@@ -228,8 +228,8 @@ const projectData = {
             "Integrated cohesive video storytelling sections."
         ],
         image: "/images/Untitled (600 x 800 px) (1).jpg", 
-        liveLink: "https://anochiriashley.github.io/Hush/", 
-        githubLink: "#" 
+        liveLink: "floralshop.html", 
+        githubLink: "https://github.com/anoc0001/My_portfolio" 
     },
     uxui: {
         title: "Project UX/UI",
