@@ -1191,94 +1191,9 @@ nav ul li a:hover {
 }
 
 
-/* moblie sizing */
-/* --- Hero Mobile Fixes --- */
-@media (max-width: 768px) {
-  .home__title {
-    font-size: 2.5rem;
-    max-width: 700px;
-  }
-  .home__description {
-    margin-top: 30px;
-    font-size: 1rem !important;
-    padding: 0 15px;
-    max-width: 450px;
-  }
-.butt-parent{
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
-   padding: 0 60px;
-}  
-
-.quote{
-  font-size: 1rem !important;
-  max-width: 800px;
-}
-.icon-code{
-  font-size: 2.5rem !important;
-  width: 10% !important;
-}
-
-.flower-icon{
-  margin-top: -100px;
-  position: relative;
-  
-  
-}
-
-}
 
 /* --- RESPONSIVENESS (Mobile Fixes) --- */
 
-@media (max-width: 768px) {
-  .wel_come {
-    padding: 60px 20px;
-     text-align: left;
-    
-  }
-  
-  
-  .archive-intro {
-    text-align: center; /* Keeps text centered on smaller screens */
-    margin-bottom: 2.5rem;
-  }
-
-  .skill-icons-row {
-    justify-content: flex-start;
-    gap: 20px; /* Tighter gap for mobile phones */
-  }
-  .playful-title{
-    font-size: 2rem !important;
-    
-  }
-
-  /* ... your existing mobile styles ... */
-
-  .project-layout {
-    width: 100%;
-    padding: 0 20px; /* Gives the images some breathing room from the screen edges */
-  }
-
-  .project-step {
-    height: 70vh; /* Lets the height adjust based on the image size */
-    margin-bottom: 60px; /* Adds space between projects */
-  }
-
-  .image-link {
-    width: 100%; /* Makes the card fill the width of the screen */
-    max-width: 320px; /* Prevents it from getting TOO big on larger phones */
-     /* Gives it a fixed "Portrait" height */
-    margin: 0 auto 30px auto; /* Centers the card */
-  }
-
-  .image-link img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* This stops the 'crushing'—it crops rather than squeezes */
-    object-position: center;
-  }
-}
 
 /* --- ADDITIONAL RESPONSIVE IMPROVEMENTS --- */
 @media (max-width: 1024px) {
@@ -1342,7 +1257,82 @@ nav ul li a:hover {
   }
 }
 
+/* --- MOBILE-SPECIFIC FIXES max-width: 768px (Phones & tablets) --- */
+
 @media (max-width: 768px) {
+
+  .home__title {
+    font-size: 2.5rem;
+    max-width: 700px;
+  }
+  .home__description {
+    margin-top: 30px;
+    font-size: 1rem !important;
+    padding: 0 15px;
+    max-width: 450px;
+  }
+.butt-parent{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   padding: 0 60px;
+}  
+
+.quote{
+  font-size: 1rem !important;
+  max-width: 800px;
+}
+.icon-code{
+  font-size: 2.5rem !important;
+  width: 10% !important;
+}
+
+.flower-icon{
+  margin-top: -100px;
+  position: relative;
+}
+ .wel_come {
+    padding: 60px 20px;
+     text-align: left;  
+  }
+  
+  .archive-intro {
+    text-align: center; /* Keeps text centered on smaller screens */
+    margin-bottom: 2.5rem;
+  }
+
+  .skill-icons-row {
+    justify-content: flex-start;
+    gap: 20px; /* Tighter gap for mobile phones */
+  }
+  .playful-title{
+    font-size: 1.5rem !important;
+  }
+
+  /* ... your existing mobile styles ... */
+  .project-layout {
+    width: 100%;
+    padding: 0 20px; /* Gives the images some breathing room from the screen edges */
+  }
+
+  .project-step {
+    height: 70vh; /* Lets the height adjust based on the image size */
+    margin-bottom: 60px; /* Adds space between projects */
+  }
+
+  .image-link {
+    width: 100%; /* Makes the card fill the width of the screen */
+    max-width: 320px; /* Prevents it from getting TOO big on larger phones */
+     /* Gives it a fixed "Portrait" height */
+    margin: 0 auto 30px auto; /* Centers the card */
+  }
+
+  .image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This stops the 'crushing'—it crops rather than squeezes */
+    object-position: center;
+  }
   .navbar {
     padding: 14px 18px;
   }
@@ -1485,9 +1475,7 @@ nav ul li a:hover {
     height: 320px;
     margin-bottom: -80px;
   }
-}
 
-@media (max-width: 768px) {
   .image-link .hover-text {
     opacity: 1 !important;
     transform: translateY(0) !important;
@@ -1554,7 +1542,58 @@ nav ul li a:hover {
     height: 200px !important;
     top: 70% !important; /* Move it out of the way of the text */
   }
-}
+
+  /* 6. new styles april 22,2026 5pm */
+   /* 1. Prevent the 'Pinch & Zoom' (The Global Guard) */
+  html, body {
+    overflow-x: hidden !important;
+    position: relative;
+    width: 100%;
+  }
+
+  /* 2. Target the 'Got a Problem' Title (contact-title) */
+  .contact-title {
+    font-size: 3rem !important; /* Slightly bigger than the 480px fix */
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  /* 3. The Modal (Project Details) Overlay */
+  .modal-content {
+    width: 85% !important; /* Give it a bit more breathing room on tablets */
+    height: auto !important;
+    max-height: 85vh !important;
+    margin: 5vh auto !important; /* Centers it vertically */
+    padding: 30px !important;
+    overflow-y: hidden !important;
+  }
+
+  /* Ensure the details inside the modal can scroll */
+  .modal-details {
+    overflow-y: auto !important;
+    max-height: 60vh !important;
+    padding-right: 10px; /* Space for the scrollbar */
+  }
+
+  /* 4. Fix the Playful Title (H1) */
+  .playful-title {
+    font-size: 4rem !important; /* Adjust so it doesn't hit the edges */
+    white-space: normal !important; /* Allow it to wrap to 2 lines if needed */
+    text-align: center;
+    display: block;
+  }
+
+  /* 5. The Footer Moving Text */
+  .footer-section {
+    overflow: hidden !important;
+  }
+  
+  .moving-text {
+    font-size: 50px !important; /* Mid-size for tablets */
+  }
+} 
+
+
 
 
 @media (max-width: 540px) {
@@ -1600,6 +1639,50 @@ nav ul li a:hover {
     right: 20px !important;
     top: 20px !important;
     z-index: 9999 !important; /* Put it on top of EVERYTHING */
+    padding: 10px !important;
+    font-size: 1.8rem !important;
+  }
+
+   .playful-title {
+    font-size: 2.8rem !important; /* Shrink from the desktop size */
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-wrap: break-word !important; /* Forces text to wrap if it's too long */
+    display: block !important;
+    text-align: center;
+  }
+
+   /* 1. Target the 'Problem' Title (from image 22) */
+  .contact-title {
+    font-size: 2.2rem !important; /* Shrink to fit screen */
+    line-height: 1.2 !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+    width: 100% !important;
+  }
+
+  /* 2. Target the Modal (from image 23) */
+  .modal-content {
+    width: 92% !important; /* Keeps it within phone edges */
+    max-height: 80vh !important; /* Takes up 80% of phone height max */
+    overflow-y: hidden !important; /* Prevents container itself from scrolling */
+    padding: 15px !important;
+  }
+
+  .modal-details {
+    overflow-y: auto !important; /* This creates the scrollbar INSIDE the details section */
+    height: 100% !important;
+    display: block !important;
+  }
+
+  .project-tagline {
+    font-size: 1rem !important; 
+    margin-bottom: 10px !important;
+  }
+
+  #modalDescription {
+    font-size: 0.9rem !important; /* Smaller text for descriptions */
+    line-height: 1.4 !important;
   }
 }
 
