@@ -227,8 +227,8 @@ const projectData = {
             "Responsive 50/50 product-showcase layout.",
             "Integrated cohesive video storytelling sections."
         ],
-        image: "/images/Untitled (600 x 800 px) (1).jpg", 
-        liveLink: "floralshop.html", 
+        image: "./images/Untitled (600 x 800 px) (1).jpg", 
+        liveLink: "Floralshop.html", 
         githubLink: "https://github.com/anoc0001/My_portfolio" 
     },
     uxui: {
@@ -247,7 +247,7 @@ const projectData = {
         description: "Developing a complete visual language, color palette, and logo system for a startup brand.",
         techUsedIcons: ["fa-solid fa-palette", "fa-brands fa-adobe"],
         features: ["Logo design", "Type System development", "Brand guidelines"],
-        image: "/images/graphics-cover.png",
+        image: "./images/graphics-cover.png",
         liveLink: "graphics.html",
         githubLink: "#"
     },
@@ -257,7 +257,7 @@ const projectData = {
         description: "Developing custom motion graphics, video intros, and logo animations to enhance digital storytelling.",
         techUsedIcons: ["fa-brands fa-adobe", "fa-solid fa-film"],
         features: ["Logo Sting creation", "GSAP sequences", "Video editing"],
-        image: "/images/ux 3.jpg",
+        image: "./images/ux 3.jpg",
         liveLink: "#",
         githubLink: "#"
     }
