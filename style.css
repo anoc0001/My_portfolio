@@ -26,6 +26,10 @@
 
   
   /*===== BASE =====*/
+  html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Prevents the 'ghost' horizontal scroll */
+}
 
   
   body{
@@ -969,6 +973,10 @@ background-color: #e5a3af;
   font-family: sans-serif;
   color: #1a1a1a;
   min-height: auto;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  display: block;
   
 }
 
@@ -1085,13 +1093,14 @@ background-color: #e5a3af;
   font-weight: bold;
   margin-top: 50px;
   font-size: 88px;
-  animation: scroll-text 8s linear infinite;
+  width: max-content;
+  animation: scroll-text 40s linear infinite;
  
 }
 
 @keyframes scroll-text {
-  1000% {
-      transform: translateX(100%);
+  0% {
+      transform: translateX(0);
   }
   100% {
       transform: translateX(-100%);
@@ -1146,7 +1155,7 @@ nav ul li a:hover {
   color: #e7adde;
 } */
 
-/* Rotating image */
+/* Rotating image 
 .rotating-image img {
   width: 60px;
   height: 60px;
@@ -1163,7 +1172,7 @@ nav ul li a:hover {
   100% {
       transform: rotate(360deg);
   }
-}
+} */
 
 
 
@@ -1442,10 +1451,10 @@ nav ul li a:hover {
     width: 100%;
   }
 
-  .contact-container {
+  /* .contact-container {
     padding: 3rem 1.5rem;
     gap: 2.5rem;
-  }
+  } */
 
   .wel_come h1 {
     margin-bottom: 1.5rem;
@@ -1461,10 +1470,10 @@ nav ul li a:hover {
     gap: 20px;
   }
 
-  .moving-text {
+ /* .moving-text {
     font-size: clamp(1.2rem, 3vw, 2rem);
     margin-top: 20px;
-  }
+  } */
 
   .work-with-me-container {
     min-height: auto;
@@ -1489,6 +1498,7 @@ nav ul li a:hover {
     font-size: 35px !important; /* Smaller text only for phones */
     animation: scroll-text 12s linear infinite !important;
     margin-top: 20px !important;
+    width: 100vw !important;
   }
 
   /* This prevents the form from being too wide for the phone */
@@ -1515,7 +1525,37 @@ nav ul li a:hover {
     font-size: 2.5rem !important;
     color: #000 !important;
   }
+
+  /* New styles for smaller screens */
+   /* 1. Fix the Hamburger Visibility */
+  .navbar {
+    z-index: 99999 !important; /* Forces it to stay on top */
+    padding: 15px !important;
+  }
+  
+
+  .work-text {
+    font-size: 2rem !important; /* Stop it from being huge */
+    transform: none !important; /* GSAP often breaks this on mobile */
+    opacity: 1 !important;
+  }
+
+  /* 3. Fix the Project Modal (The 'Side-Shift' fix) */
+  .modal-content {
+    width: 92% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+    padding: 15px !important;
+  }
+  
+  /* 5. Fix the 'Math Bird' & Coils (The 'Crashing' fix) */
+  .floating-coil {
+    width: 200px !important;
+    height: 200px !important;
+    top: 70% !important; /* Move it out of the way of the text */
+  }
 }
+
 
 @media (max-width: 540px) {
   .navbar {
