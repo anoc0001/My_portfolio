@@ -1478,6 +1478,45 @@ nav ul li a:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .image-link .hover-text {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    font-size: 1.1rem !important;
+  }
+/* 1. Shrink the 'Wobble' text */
+  .moving-text {
+    font-size: 35px !important; /* Smaller text only for phones */
+    animation: scroll-text 12s linear infinite !important;
+    margin-top: 20px !important;
+  }
+
+  /* This prevents the form from being too wide for the phone */
+  .contact-container { 
+      padding: 3rem 1.5rem !important; 
+      gap: 2rem !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+  }
+  .contact-form form {
+      width: 100% !important; 
+  }
+  
+  /* 2. Fix the Quote size so it fits the screen */
+  .quote h1, .quote span {
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+  }
+
+ 
+  /* 4. Force Hamburger visibility */
+  .menu-toggle {
+    display: block !important;
+    font-size: 2.5rem !important;
+    color: #000 !important;
+  }
+}
+
 @media (max-width: 540px) {
   .navbar {
     padding: 12px 16px;
@@ -1509,6 +1548,18 @@ nav ul li a:hover {
 
   .footer-bottom {
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-toggle {
+    display: block !important;
+    visibility: visible !important;
+    color: #000 !important; /* Forces it to be black so you can see it */
+    position: fixed !important;
+    right: 20px !important;
+    top: 20px !important;
+    z-index: 9999 !important; /* Put it on top of EVERYTHING */
   }
 }
 
