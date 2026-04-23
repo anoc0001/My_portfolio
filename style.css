@@ -1207,7 +1207,7 @@ nav ul li a:hover {
   }
 
   .home__container {
-    padding: 0 24px;
+    padding: 0 30px; /* was 24px */
   }
 
   .home__title {
@@ -1283,7 +1283,11 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 0 16px;
+    padding: 0 70px; /* was 16px */
+   
+  }
+.butt-parent a {
+    font-size: 12px !important;
   }
 
   .wel_come {
@@ -1587,8 +1591,8 @@ nav ul li a:hover {
   .modal-content {
     width: 92% !important; /* Keeps it within phone edges */
     max-height: 60vh !important; /* Takes up 80% of phone height max */
-    overflow-y: hidden !important; /* Prevents container itself from scrolling */
-    padding: 15px !important;
+   /*  overflow-y: hidden !important; Prevents container itself from scrolling */
+   /* padding: 15px !important; */
   }
 
   .modal-details {
