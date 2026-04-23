@@ -1259,106 +1259,72 @@ nav ul li a:hover {
 
 /* --- MOBILE-SPECIFIC FIXES max-width: 768px (Phones & tablets) --- */
 
+/* --- MOBILE-SPECIFIC FIXES max-width: 768px (Phones & tablets) --- */
 @media (max-width: 768px) {
+
+  /* ============================================================
+     HOME SECTION
+  ============================================================ */
 
   .home__title {
     font-size: 2.5rem;
     max-width: 700px;
   }
+
   .home__description {
     margin-top: 30px;
     font-size: 1rem !important;
     padding: 0 15px;
-    max-width: 450px;
-  }
-.butt-parent{
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
-   padding: 0 60px;
-}  
-
-.quote{
-  font-size: 1rem !important;
-  max-width: 800px;
-}
-.icon-code{
-  font-size: 2.5rem !important;
-  width: 10% !important;
-}
-
-.flower-icon{
-  margin-top: -100px;
-  position: relative;
-}
- .wel_come {
-    padding: 60px 20px;
-     text-align: left;  
-  }
-  
-  .archive-intro {
-    text-align: center; /* Keeps text centered on smaller screens */
-    margin-bottom: 2.5rem;
-  }
-
-  .skill-icons-row {
-    justify-content: flex-start;
-    gap: 20px; /* Tighter gap for mobile phones */
-  }
-  .playful-title{
-    font-size: 1.5rem !important;
-  }
-
-  /* ... your existing mobile styles ... */
-  .project-layout {
-    width: 100%;
-    padding: 0 20px; /* Gives the images some breathing room from the screen edges */
-  }
-
-  .project-step {
-    height: 70vh; /* Lets the height adjust based on the image size */
-    margin-bottom: 60px; /* Adds space between projects */
-  }
-
-  .image-link {
-    width: 100%; /* Makes the card fill the width of the screen */
-    max-width: 320px; /* Prevents it from getting TOO big on larger phones */
-     /* Gives it a fixed "Portrait" height */
-    margin: 0 auto 30px auto; /* Centers the card */
-  }
-
-  .image-link img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* This stops the 'crushing'—it crops rather than squeezes */
-    object-position: center;
-  }
-  .navbar {
-    padding: 14px 18px;
-  }
-
-  .nav-overlay {
-    padding: 40px 20px;
-  }
-
-  .nav-links a {
-    font-size: 2rem;
-  }
-
-  .home__button,
-  .second-button {
-    width: 100%;
-    padding: 1rem 1.5rem;
+    max-width: 100%;
   }
 
   .butt-parent {
+    display: flex;
     flex-direction: column;
-    padding: 0 20px;
+    gap: 10px;
+    padding: 0 30px;
   }
 
-  .home__description {
-    font-size: 1rem;
-    max-width: 100%;
+  .wel_come {
+    padding: 60px 20px;
+    text-align: left;
+  }
+
+  .wel_come h1 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+
+  .playful-title {
+    font-size: 2rem !important;
+    white-space: normal !important;
+    text-align: center;
+    display: block;
+  }
+
+  .work-text {
+    font-size: 2rem !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .work-with-me-container {
+    min-height: auto;
+    padding: 60px 2rem;
+  }
+
+  /* ============================================================
+     QUOTE SECTION
+  ============================================================ */
+
+  .quote {
+    margin-top: 120px;
+    margin-bottom: 40px;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    font-size: 1rem; /* base size for future elements */
   }
 
   .quote-wrapper {
@@ -1368,17 +1334,19 @@ nav ul li a:hover {
 
   .quote h1 {
     min-height: auto;
-    font-size: clamp(2rem, 6vw, 3.3rem);
+    font-size: 28px !important;
+    line-height: 1.2 !important;
   }
 
-  .quote {
-    margin-top: 120px;
-    margin-bottom: 40px;
-    font-size: clamp(2rem, 5vw, 2.5rem);
-    line-height: 1.2;
-    padding: 0 16px;
+  /* ============================================================
+     ICONS
+  ============================================================ */
+
+  .icon-code {
+    font-size: 2.5rem !important;
+    width: 10% !important;
     position: relative;
-    z-index: 1;
+    bottom: -100px;
   }
 
   .icon-setting {
@@ -1391,28 +1359,57 @@ nav ul li a:hover {
   }
 
   .flower-icon {
-    width: 90px;
+    margin-top: -100px;
+    position: relative;
+    width: 80px;
     height: auto;
-    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.15));
   }
 
-  .icon-code {
-    font-size: 3rem !important;
-    bottom: -100px;
+  .floating-coil {
+    width: 320px;
+    height: 320px;
+    position: relative; /* required for top to work */
+    top: 70% !important;
+    margin-bottom: -80px;
   }
 
-  .skill-icons-row {
-    gap: 1rem;
+  /* ============================================================
+     NAVIGATION
+  ============================================================ */
+
+  .navbar {
+    z-index: 99999 !important;
+    padding: 15px !important;
   }
+
+  .nav-overlay {
+    padding: 40px 20px;
+  }
+
+  .nav-links a {
+    font-size: 2rem;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block !important;
+    font-size: 2.5rem !important;
+    color: #000 !important;
+  }
+
+  /* ============================================================
+     PROJECTS
+  ============================================================ */
 
   .project-layout {
-    margin-top: 6rem;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 4rem;
   }
 
   .project-step {
-    min-height: auto;
+    margin-bottom: 50px;
     padding: 2rem 0;
-    margin-bottom: 4.5rem;
   }
 
   .image-link {
@@ -1424,56 +1421,8 @@ nav ul li a:hover {
   .image-link img {
     width: 100%;
     height: auto;
-    max-height: 70vh;
-  }
-
-  .modal-content {
-    width: 100%;
-    max-width: 720px;
-  }
-
-  .modal-btns {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .contact-form form {
-    width: 100%;
-  }
-
-  /* .contact-container {
-    padding: 3rem 1.5rem;
-    gap: 2.5rem;
-  } */
-
-  .wel_come h1 {
-    margin-bottom: 1.5rem;
-    font-size: clamp(2.5rem, 8vw, 4rem);
-  }
-
-  .archive-intro {
-    margin: 1rem auto 2rem auto;
-    max-width: 100%;
-  }
-
-  .footer-right {
-    gap: 20px;
-  }
-
- /* .moving-text {
-    font-size: clamp(1.2rem, 3vw, 2rem);
-    margin-top: 20px;
-  } */
-
-  .work-with-me-container {
-    min-height: auto;
-    padding: 60px 2rem;
-  }
-
-  .floating-coil {
-    width: 320px;
-    height: 320px;
-    margin-bottom: -80px;
+    object-fit: cover;
+    object-position: center;
   }
 
   .image-link .hover-text {
@@ -1481,120 +1430,84 @@ nav ul li a:hover {
     transform: translateY(0) !important;
     font-size: 1.1rem !important;
   }
-/* 1. Shrink the 'Wobble' text */
+
+  /* ============================================================
+     MODAL
+  ============================================================ */
+
+  .modal-content {
+    width: 85% !important;
+    height: auto !important;
+    max-height: 80vh !important;
+    padding: 30px !important;
+    overflow-y: auto !important;
+  }
+
+  .modal-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modal-details {
+    overflow-y: auto !important;
+    max-height: 60vh !important;
+    padding-right: 10px;
+  }
+
+  /* ============================================================
+     CONTACT SECTION
+  ============================================================ */
+
+  .contact-container {
+    padding: 3rem 1.5rem !important;
+    gap: 2rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .contact-form form {
+    width: 100%;
+  }
+
+  .contact-title {
+    font-size: 2.2rem !important;
+    text-align: center;
+  }
+
+  /* ============================================================
+     FOOTER
+  ============================================================ */
+
+  .footer-right {
+    gap: 20px;
+  }
+
+  .footer-section {
+    overflow: hidden !important;
+  }
+
   .moving-text {
-    font-size: 35px !important; /* Smaller text only for phones */
     animation: scroll-text 12s linear infinite !important;
     margin-top: 20px !important;
     width: 100vw !important;
+    overflow: hidden;
+    font-size: 25px !important;
   }
 
-  /* This prevents the form from being too wide for the phone */
-  .contact-container { 
-      padding: 3rem 1.5rem !important; 
-      gap: 2rem !important;
-      width: 100% !important;
-      box-sizing: border-box !important;
-  }
-  .contact-form form {
-      width: 100% !important; 
-  }
-  
-  /* 2. Fix the Quote size so it fits the screen */
-  .quote h1, .quote span {
-    font-size: 30px !important;
-    line-height: 1.2 !important;
+  .moving-text h1 {
+    font-size: 25px !important;
   }
 
- 
-  /* 4. Force Hamburger visibility */
-  .menu-toggle {
-    display: block !important;
-    font-size: 2.5rem !important;
-    color: #000 !important;
-  }
+  /* ============================================================
+     GLOBAL MOBILE FIXES
+  ============================================================ */
 
-  /* New styles for smaller screens */
-   /* 1. Fix the Hamburger Visibility */
-  .navbar {
-    z-index: 99999 !important; /* Forces it to stay on top */
-    padding: 15px !important;
-  }
-  
-
-  .work-text {
-    font-size: 2rem !important; /* Stop it from being huge */
-    transform: none !important; /* GSAP often breaks this on mobile */
-    opacity: 1 !important;
-  }
-
-  /* 3. Fix the Project Modal (The 'Side-Shift' fix) */
-  .modal-content {
-    width: 92% !important;
-    max-width: none !important;
-    margin: 0 auto !important;
-    padding: 15px !important;
-  }
-  
-  /* 5. Fix the 'Math Bird' & Coils (The 'Crashing' fix) */
-  .floating-coil {
-    width: 200px !important;
-    height: 200px !important;
-    top: 70% !important; /* Move it out of the way of the text */
-  }
-
-  /* 6. new styles april 22,2026 5pm */
-   /* 1. Prevent the 'Pinch & Zoom' (The Global Guard) */
   html, body {
     overflow-x: hidden !important;
     position: relative;
     width: 100%;
   }
 
-  /* 2. Target the 'Got a Problem' Title (contact-title) */
-  .contact-title {
-    font-size: 3rem !important; /* Slightly bigger than the 480px fix */
-    text-align: center;
-    padding: 0 20px;
-  }
-
-  /* 3. The Modal (Project Details) Overlay */
-  .modal-content {
-    width: 85% !important; /* Give it a bit more breathing room on tablets */
-    height: auto !important;
-    max-height: 85vh !important;
-    margin: 5vh auto !important; /* Centers it vertically */
-    padding: 30px !important;
-    overflow-y: hidden !important;
-  }
-
-  /* Ensure the details inside the modal can scroll */
-  .modal-details {
-    overflow-y: auto !important;
-    max-height: 60vh !important;
-    padding-right: 10px; /* Space for the scrollbar */
-  }
-
-  /* 4. Fix the Playful Title (H1) */
-  .playful-title {
-    font-size: 4rem !important; /* Adjust so it doesn't hit the edges */
-    white-space: normal !important; /* Allow it to wrap to 2 lines if needed */
-    text-align: center;
-    display: block;
-  }
-
-  /* 5. The Footer Moving Text */
-  .footer-section {
-    overflow: hidden !important;
-  }
-  
-  .moving-text {
-    font-size: 50px !important; /* Mid-size for tablets */
-  }
-} 
-
-
-
+}
 
 @media (max-width: 540px) {
   .navbar {
