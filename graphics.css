@@ -45,6 +45,8 @@ body{
   justify-content: center;
   align-items: center;
   margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
 
 }
  /* title and describtion */
@@ -56,7 +58,7 @@ body{
 }
 
 .graphics-header h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem); /* Responsive font size */
   margin-bottom: 15px;
   /* You can add your "girly/luxury" font here if you have one! */
 }
@@ -264,69 +266,3 @@ body{
 }
 
 
-/*  Navbar Styling */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  background: transparent; /* Or whatever your theme color is */
-}
-
-/* 2. Hamburger Icon Style */
-.menu-toggle {
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 1001; /* Stays above the menu when it opens */
-  color: #333; /* Change to your preferred color */
-}
-
-/* 3. The Full-Screen Overlay */
-.nav-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  /* Hidden by default */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-}
-
-/* 4. When the menu is "Active" (triggered by JS later) */
-.nav-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* 5. Menu Links Styling */
-.nav-links {
-  list-style: none;
-  text-align: center;
-}
-
-.nav-links li {
-  margin: 20px 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-  font-size: 2.5rem; /* Large text for that clean look */
-  font-weight: bold;
-  color: #000;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #ff4d4d; /* Or your brand accent color */
-} /* nav bar ends here */

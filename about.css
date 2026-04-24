@@ -2,7 +2,8 @@
 
 
 :root {
-  --first-color: #FCA4A6;
+    
+  --first-color:  #e365b1f9;
   --first-color-dark: #C1576A;
   --garden-bg: #fff0f1;
   --garden-dark: #333333;
@@ -168,12 +169,14 @@ img {
   justify-content: center;
   align-items: center;
   padding: 40px 5%;
+  margin-bottom: 5rem;
 }
 
 .hobbies-text {
+  text-align: center;
   max-width: 900px;
   font-family: var(--body-font);
-  font-size: 1.3rem;
+  font-size: 2rem;
   line-height: 2.2;
   color: #2d3436;
 }
@@ -286,3 +289,85 @@ img {
     line-height: 2.4;
   }
 }
+
+/* Stronger mobile scaling */
+@media (max-width: 600px) {
+
+  /* GENERAL SPACING */
+  .about-garden {
+    padding: 40px 1.5rem;
+    margin-top: 2rem;
+  }
+
+  /* HEADER: "A little info about me" */
+  .garden-header {
+    font-size: 1.9rem;
+    margin-bottom: 30px;
+    line-height: 1.2;
+  }
+
+  /* IMAGE */
+  .profile-col {
+    width: 220px;
+  }
+
+  .profile-img {
+    border-radius: 25px;
+  }
+
+  /* PARAGRAPH UNDER ABOUT ME */
+  .garden-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* INLINE ASSETS (bulb, squiggle, video) */
+  .pill {
+    width: 45px;
+    margin: 0 5px;
+  }
+
+  .squiggle {
+    width: 70px;
+  }
+
+  .video {
+    width: 70px;
+    height: 40px;
+  }
+
+  /* MY VALUES SECTION */
+  .val-prag {
+    padding: 2rem 1.5rem;
+    border-radius: 25px;
+  }
+
+  .val-prag h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .val-prag p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  /* HOBBIES SECTION */
+  .hobbies-title {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .hobbies-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    padding: 0 1rem;
+  }
+
+  /* Reduce hover media size on mobile */
+  .hover-media {
+    width: 120px !important;
+  }
+}
+

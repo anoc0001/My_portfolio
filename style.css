@@ -872,7 +872,7 @@ body {
 }
 
 /* === styling the button == */
-button {
+.contact-button {
   margin-top: 1rem;
     padding: 15px;
     border-radius: 10px;
@@ -885,8 +885,10 @@ button {
 
 }
 
-button:hover {
-background-color: #e5a3af;
+.contact-button:hover {
+ background-color: #e365b1f9;
+    box-shadow: 0 0 15px 5px #e365b1f9;
+    
 }
 
 
@@ -1095,7 +1097,7 @@ background-color: #e5a3af;
   margin-top: 50px;
   font-size: 88px;
   width: max-content;
-  animation: scroll-text 40s linear infinite;
+  animation: scroll-text 10s linear infinite;
  
 }
 
@@ -1283,7 +1285,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 0 70px; /* was 16px */
+    padding: 0 40px; /* was 16px */
    
   }
 .butt-parent a {
@@ -1417,9 +1419,10 @@ nav ul li a:hover {
   }
 
   .project-step {
-   /* margin-bottom: 50px; */
-    padding: 2rem 0;
-  }
+    height: 85vh; /* Reduced height for mobile */
+   /* margin-bottom: 50px; 
+   padding: 2rem 0; */
+  } 
 
   .image-link {
     width: 85%;

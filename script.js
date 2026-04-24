@@ -19,9 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     menuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
-        console.log("Menu clicked!"); // Check your browser console to see if this works
+        console.log("Menu clicked!"); 
     });
-}); // nav bar ends here
+}); 
+
+// nav bar ends here
 
 
 // == particul stars hereS
@@ -41,7 +43,7 @@ class Particle {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.size = Math.random() * 3 + 1;
+    this.size = Math.random() * 6 + 1;
     this.speedX = Math.random() * 2 - 1;
     this.speedY = Math.random() * 2 - 1;
     this.alpha = 1;
