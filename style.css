@@ -1285,7 +1285,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 0 40px; /* was 16px */
+    padding: 0 16px; /* was 16px */
    
   }
 .butt-parent a {
