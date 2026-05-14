@@ -249,7 +249,7 @@ const projectData = {
         "Performance Optimization & SEO Best Practices",
         "Advanced jQuery Logic for Interactive Storefronts"
     ],
-    image: "./images/shopify liquid development.png",
+    image: "./images/Shopify Liquid development.png",
     liveLink: "#", // I will Update this once the dev store is ready
     githubLink: "https://github.com/anoc0001/My_portfolio"
 },

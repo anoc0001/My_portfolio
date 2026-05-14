@@ -144,7 +144,7 @@
 
         <section class="project-step">
         <div class="image-link" onclick="openProject('motion')">
-            <span class="project-image"><img src="./images/binge-library.png" alt="Web Developmentpng"></span>
+            <span class="project-image"><img src="./images/binge-library.png" alt="Binge Library App"></span>
             <span class="hover-text">Media Management App</span>
         </div>
     </section>
@@ -193,9 +193,11 @@
     </div>
 
     <div class="contact-form">
-        <form action="#" method="POST">
+        <form action="https://api.web3forms.com/submit" method="POST">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required placeholder="Your Name">
+            <input type="hidden" name="access_key" value="26d3c4cb-affe-4a89-8610-38b77b8bb55d" >
+
+            <input type="text" id="name" name="name"  required placeholder="Your Name">
             
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required placeholder="Your Email">
