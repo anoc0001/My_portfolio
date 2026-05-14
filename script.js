@@ -282,7 +282,7 @@ const projectData = {
         "Custom API Integration for Metadata Scraping",
         "Personalized UI for Media Management"
     ],
-    image: "./images/binge-library.png", // Keep this or update if you have a specific mockup
+    image: "./images/binge-library.png", 
     liveLink: "#",
     githubLink: "#"
 }
