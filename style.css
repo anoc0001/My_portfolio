@@ -1420,7 +1420,7 @@ nav ul li a:hover {
   }
 
   .project-step {
-    height: 70vh; /* Reduced height for mobile */
+    height: 65vh; /* Reduced height for mobile */
    /* margin-bottom: 50px; 
    padding: 2rem 0; */
   } 
