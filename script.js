@@ -128,7 +128,7 @@ tl.to(".quote span", {
 tl.to(".quote", {
   opacity: 0,
   y: -10,
-  duration: 1,
+  duration: 8,
 });
 
 // Floating Circle moves up
