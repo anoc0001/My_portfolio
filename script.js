@@ -215,13 +215,13 @@ wordss.forEach(word => {
 // ====== 2. Project Data Storage ======
 const projectData = {
     peony: {
-        title: "Project Peony",
+        title: "Project: Peony-E-Commerce website",
         tagline: "E-Commerce Experience",
         description: "Crafted a premium, high-converting digital storefront for 'Peony,' a luxury floral brand. The core focus was translating the brand’s curated aesthetic into a seamless and intuitive user journey, making the client feel personalized care.",
         techUsedIcons: [
-            "fa-brands fa-html5",
-            "fa-brands fa-css3-alt",
-            "fa-brands fa-js"
+            { class: "fa-brands fa-html5", name: "HTML5" },
+            { class: "fa-brands fa-css3-alt", name: "CSS3" },
+            { class: "fa-brands fa-js", name: "JavaScript" }
         ],
         features: [
             "Premium GSAP micro-interactions (e.g., product fade-ins).",
@@ -234,35 +234,58 @@ const projectData = {
         githubLink: "https://github.com/anoc0001/My_portfolio" 
     },
     uxui: {
-        title: "Project UX/UI",
-        tagline: "Interface Design Case Study",
-        description: "A comprehensive case study demonstrating user research, wireframing, and hi-fidelity prototyping for a mobile application.",
-        techUsedIcons: ["fa-brands fa-figma", "fa-solid fa-compass-drafting"],
-        features: ["User Journey Mapping", "Wireframe iterations", "Responsive prototypes"],
-        image: "./images/ux.jpg",
-        liveLink: "#",
-        githubLink: "#"
-    },
+    title: "Project: Shopify Liquid Architecture",
+    tagline: "Custom Theme Development & API Integration",
+    description: "A technical deep-dive into building a scalable, high-performance Shopify storefront. Focused on revamping standard themes into custom Liquid experiences with optimized user journeys and seamless third-party API connectivity.",
+    techUsedIcons: [
+        { class: "fa-brands fa-shopify", name: "Liquid" },
+        { class: "fa-solid fa-code", name: "jQuery" },
+        { class: "fa-brands fa-js", name: "JavaScript" },
+        { class: "fa-solid fa-gears", name: "API" }
+    ],
+    features: [
+        "Custom Liquid Section Schema & Reusable Blocks",
+        "Shopify Storefront API for Dynamic Product Feeds",
+        "Performance Optimization & SEO Best Practices",
+        "Advanced jQuery Logic for Interactive Storefronts"
+    ],
+    image: "./images/shopify liquid development.png",
+    liveLink: "#", // I will Update this once the dev store is ready
+    githubLink: "https://github.com/anoc0001/My_portfolio"
+},
     graphic: {
-        title: "Project Graphic",
+        title: "Project: Graphic Design",
         tagline: "Brand Identity System",
-        description: "Developing a complete visual language, color palette, and logo system for a startup brand.",
-        techUsedIcons: ["fa-solid fa-palette", "fa-brands fa-adobe"],
+        description: "Developing a complete visual language, color palette, and logo system for brands.",
+        techUsedIcons: [
+            { class: "fa-solid fa-palette", name: "Design" },
+            { class: "fa-brands fa-adobe", name: "Adobe Suite" }
+        ],
         features: ["Logo design", "Type System development", "Brand guidelines"],
         image: "./images/graphics-cover.png",
         liveLink: "graphics.html",
         githubLink: "#"
     },
-    motion: {
-        title: "Project Motion",
-        tagline: "Animation and Video",
-        description: "Developing custom motion graphics, video intros, and logo animations to enhance digital storytelling.",
-        techUsedIcons: ["fa-brands fa-adobe", "fa-solid fa-film"],
-        features: ["Logo Sting creation", "GSAP sequences", "Video editing"],
-        image: "./images/ux 3.jpg",
-        liveLink: "#",
-        githubLink: "#"
-    }
+   motion: {
+    title: "Project: Binge Library App",
+    tagline: "Social Media Reels Curator & Organizer",
+    description: "Developing a central hub designed to capture, organize, and archive media links from various social platforms. This application streamlines the way users save content for later, turning scattered links into a searchable, categorized personal library.",
+    techUsedIcons: [
+        { class: "fa-brands fa-html5", name: "HTML5" },
+        { class: "fa-brands fa-css3-alt", name: "CSS3" },
+        { class: "fa-solid fa-gears", name: "REST API" },
+        { class: "fa-brands fa-js", name: "JavaScript" }
+    ],
+    features: [
+        "Cross-Platform Link Aggregation",
+        "Dynamic Content Categorization",
+        "Custom API Integration for Metadata Scraping",
+        "Personalized UI for Media Management"
+    ],
+    image: "./images/binge-library.png", // Keep this or update if you have a specific mockup
+    liveLink: "#",
+    githubLink: "#"
+}
 };
 
 // ====== 3. Modal Functions ======
@@ -287,13 +310,29 @@ function openProject(projectId) {
     document.getElementById('githubCodeBtn').href = data.githubLink;
 
     // Inject Tech Icons
-    const techIconRow = document.getElementById('techIconsRow');
-    techIconRow.innerHTML = ""; 
-    data.techUsedIcons.forEach(iconClass => {
-        const iconElement = document.createElement('i');
-        iconElement.className = iconClass;
-        techIconRow.appendChild(iconElement);
-    });
+    // Inject Tech Icons
+const techIconRow = document.getElementById('techIconsRow');
+techIconRow.innerHTML = "";
+
+data.techUsedIcons.forEach(iconObj => {
+    const iconWrapper = document.createElement('div');
+    iconWrapper.style.display = "flex";
+    iconWrapper.style.flexDirection = "column";
+    iconWrapper.style.alignItems = "center";
+    iconWrapper.style.margin = "0 10px"; // Adds a little space between each pair
+
+    const iconElement = document.createElement('i');
+    iconElement.className = iconObj.class;
+    
+    const nameElement = document.createElement('span');
+    nameElement.innerText = iconObj.name;
+    nameElement.style.fontSize = "10px";
+    nameElement.style.marginTop = "4px";
+
+    iconWrapper.appendChild(iconElement);
+    iconWrapper.appendChild(nameElement);
+    techIconRow.appendChild(iconWrapper);
+});
 
     // Inject Features List
     const featureList = document.getElementById('modalFeatures');
