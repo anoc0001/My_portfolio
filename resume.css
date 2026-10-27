@@ -3,8 +3,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 /*===== VARIABLES CSS =====*/
 
- 
-  
+.resume-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.resume-page .resume {
+  width: min(100% - 2rem, 42rem);
+  margin: 0;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.resume-eyebrow {
+  color: #a63e78;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.resume h1 {
+  color: #1a1a1a;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+}
+
+.resume-intro {
+  max-width: 35rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.resume-contact {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.resume-contact:hover {
+  color: #a63e78;
+}
+
   .resume {
     display: grid;
     justify-items: center;
@@ -14,7 +52,7 @@
     gap:5rem;
     
   }
-  .resume img{
+ /* .resume img{
     width: 55%;
     height: 100%;
     margin-top: 50px;
@@ -24,7 +62,7 @@
   .download-button {
    
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #a63e78;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -33,12 +71,12 @@
   }
   
   .download-button:hover {
-    background-color: #0056b3;
+    background-color: #842e60;
   }
 
 
  
-.panel {
+/*.panel {
   height: 100vh;
   padding: 2rem;
   font-size: 2rem;
