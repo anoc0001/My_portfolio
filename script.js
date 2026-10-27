@@ -215,56 +215,73 @@ wordss.forEach(word => {
 // ====== 2. Project Data Storage ======
 const projectData = {
     peony: {
-        title: "Project: Peony-E-Commerce website",
-        tagline: "E-Commerce Experience",
-        description: "Crafted a premium, high-converting digital storefront for 'Peony,' a luxury floral brand. The core focus was translating the brand’s curated aesthetic into a seamless and intuitive user journey, making the client feel personalized care.",
+        title: "Project: Peony E-Commerce Website",
+        tagline: "Multi-Page Storefront & Brand Identity",
+        description: "A multi-page e-commerce storefront designed and engineered for a boutique floral brand. The project focused on translating high-end visual branding into responsive front-end code, combining custom CSS grid layouts with semantic HTML5 structure. Integrated vanilla JavaScript and GSAP to deliver smooth scroll transitions, interactive product showcases, and a seamless shopping flow across all device sizes.",
+        techUsedIcons: [
+            { class: "fa-brands fa-html5", name: "HTML5" },
+            { class: "fa-brands fa-css3-alt", name: "CSS3" },
+            { class: "fa-brands fa-js", name: "JavaScript" },
+            { class: "fa-brands fa-gsap", name: "GSAP" }
+        ],
+        features: [
+            "Responsive Layout Engineering: Built split-screen (50/50) product showcases and multi-page layouts using custom CSS Grid and Flexbox.",
+            "GSAP Micro-Interactions: Implemented subtle scroll triggers and dynamic product fade-ins to enhance visual engagement.",
+            "Category Navigation: Structured intuitive navigation flows for browsing collections and product details seamlessly.",
+            "Integrated Media Sections: Embedded responsive video and editorial image components to align with brand storytelling."
+        ],
+        image: "./images/Untitled (600 x 800 px) (1).jpg", 
+        liveLink: "Floralshop.html", 
+        githubLink: "https://github.com/anoc0001/My_portfolio" 
+    },
+    TintBar: {
+        title: "Project: TintBar (Beauty & Makeup Landing Page)",
+        tagline: "Single-Page E-Commerce Marketing & Interactive Landing Page",
+        description: "Architected a modern e-commerce landing page designed to optimize visual hierarchy and user engagement. Translated high-fidelity UI concepts into clean front-end code, prioritizing mobile responsiveness, accessibility standards (WCAG/AODA), and fast render performance. Combined custom CSS layout techniques with GSAP micro-interactions to deliver a polished, interactive brand experience.",
         techUsedIcons: [
             { class: "fa-brands fa-html5", name: "HTML5" },
             { class: "fa-brands fa-css3-alt", name: "CSS3" },
             { class: "fa-brands fa-js", name: "JavaScript" }
         ],
         features: [
-            "Premium GSAP micro-interactions (e.g., product fade-ins).",
-            "Complex category navigation with unique layout.",
-            "Responsive 50/50 product-showcase layout.",
-            "Integrated cohesive video storytelling sections."
+            "Front-End Development & Layout: Styled fluid, cross-browser responsive layouts using advanced CSS Grid and Flexbox.",
+            "Interactive Micro-Interactions: Incorporated GSAP animation triggers for smooth scroll behaviors and dynamic UI hover states.",
+            "Brand Curation & Web Standards: Developed visual brand assets and structured semantic markup to ensure strict web accessibility compliance."
         ],
-        image: "./images/Untitled (600 x 800 px) (1).jpg", 
-        liveLink: "Floralshop.html", 
-        githubLink: "https://github.com/anoc0001/My_portfolio" 
+        image: "./images/Tintbar.jpeg",
+        liveLink: "https://anoc0001.github.io/TintBar-Makeup-brand-Landing-page/",
+        githubLink: "https://github.com/anoc0001/TintBar-Makeup-brand-Landing-page"
     },
-    uxui: {
-    title: "Project: Shopify Liquid Architecture",
-    tagline: "Custom Theme Development & API Integration",
-    description: "A technical deep-dive into building a scalable, high-performance Shopify storefront. Focused on revamping standard themes into custom Liquid experiences with optimized user journeys and seamless third-party API connectivity.",
+    VesperaHome: {
+    title: "Project: Vespera Home (Furniture & Interior Catalog)",
+    tagline: "Interactive Product Catalog & Dynamic Filtering System",
+    description: "Developed a responsive furniture catalog focused on seamless product discovery and intuitive user experience. The interface was conceptualized from digital UI designs and built using semantic HTML5 and custom CSS for responsive grid layouts. Integrated vanilla JavaScript to handle multi-category filtering, real-time keyword search, and dynamic UI state updates without full page reloads.",
     techUsedIcons: [
-        { class: "fa-brands fa-shopify", name: "Liquid" },
-        { class: "fa-solid fa-code", name: "jQuery" },
-        { class: "fa-brands fa-js", name: "JavaScript" },
-        { class: "fa-solid fa-gears", name: "API" }
+        { class: "fa-brands fa-html5", name: "HTML5" },
+        { class: "fa-brands fa-css3-alt", name: "CSS3" },
+        { class: "fa-brands fa-js", name: "JavaScript" }
     ],
     features: [
-        "Custom Liquid Section Schema & Reusable Blocks",
-        "Shopify Storefront API for Dynamic Product Feeds",
-        "Performance Optimization & SEO Best Practices",
-        "Advanced jQuery Logic for Interactive Storefronts"
+        "Layout & Styling Architecture: Structured responsive card grids and flexbox components using modular CSS and semantic HTML5.",
+        "Dynamic UI State Management: Implemented custom JavaScript logic to power real-time category filtering and live search capabilities.",
+        "Design System Translation: Built custom product badges, visual color palettes, and typography rules into a cohesive UI system."
     ],
-    image: "./images/Shopify Liquid development.png",
-    liveLink: "#", // I will Update this once the dev store is ready
-    githubLink: "https://github.com/anoc0001/My_portfolio"
+    image: "./images/Vespera Home.jpeg",
+    liveLink: "https://anoc0001.github.io/Vespera-Home/",
+    githubLink: "https://github.com/anoc0001/Vespera-Home"
 },
     graphic: {
         title: "Project: Graphic Design",
         tagline: "Brand Identity System",
         description: "Developing a complete visual language, color palette, and logo system for brands.",
         techUsedIcons: [
-            { class: "fa-solid fa-palette", name: "Design" },
-            { class: "fa-brands fa-adobe", name: "Adobe Suite" }
+            { class: "fa-solid fa-palette", name: "Canva Pro" },
+            { class: "fa-brands fa-palette", name: "Adobe XD" }
         ],
         features: ["Logo design", "Type System development", "Brand guidelines"],
         image: "./images/graphics-cover.png",
         liveLink: "graphics.html",
-        githubLink: "#"
+       // githubLink: "#" // No GitHub link for graphic design projects
     },
    motion: {
     title: "Project: Binge Library App",
@@ -305,9 +322,17 @@ function openProject(projectId) {
     modalImg.src = data.image;
     modalImg.alt = data.title;
     
-    // Update button links
-    document.getElementById('liveDemoBtn').href = data.liveLink;
-    document.getElementById('githubCodeBtn').href = data.githubLink;
+    // Update project-specific action buttons
+    const actionButtons = document.querySelector('.modal-btns');
+    const liveDemoBtn = document.getElementById('liveDemoBtn');
+    const githubCodeBtn = document.getElementById('githubCodeBtn');
+    const isGraphicProject = projectId === 'graphic';
+
+    liveDemoBtn.href = data.liveLink;
+    liveDemoBtn.innerText = isGraphicProject ? 'View Designs' : 'Live Demo';
+    githubCodeBtn.href = data.githubLink;
+    githubCodeBtn.hidden = isGraphicProject;
+    actionButtons.classList.toggle('graphic-project', isGraphicProject);
 
     // Inject Tech Icons
     // Inject Tech Icons

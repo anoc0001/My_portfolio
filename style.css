@@ -484,20 +484,29 @@ h1 {
   gap: clamp(1.5rem, 4vw, 3rem);
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
+}
+
+.skill-icon-item {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
+  color: #1a1a1a;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
 
 /* Icon Styling (Black to Pink) */
-.skill-icons-row i {
+.skill-icon-item i {
   font-size: clamp(30px, 5vw, 45px); 
   color: #1a1a1a; /* Default Black */
   opacity: 0.8;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: pointer;
 }
 
 /* Icon Hover State */
-.skill-icons-row i:hover {
+.skill-icon-item:hover i {
   opacity: 1;
   color: #e365b1f9; /* Signature Pink */
   transform: translateY(-10px) scale(1.15);
@@ -678,9 +687,11 @@ body {
 
 /* 4. The Close Button */
 .close-modal {
-    position: fixed;
-    top: 20px;
-    right: 25px;
+    position: sticky;
+    top: 12px;
+    display: block;
+    width: fit-content;
+    margin: 0 12px -3rem auto;
     font-size: 3rem;
     cursor: pointer;
     z-index: 100;
@@ -712,7 +723,7 @@ body {
 
 /* 7. Details Section (Text) */
 .modal-details {
-    padding: 30px;
+    padding: 50px;
     color: #1a1a1a;
 }
 
@@ -777,6 +788,14 @@ body {
     font-weight: 600;
 }
 
+.modal-btns.graphic-project {
+    justify-content: center;
+}
+
+.modal-btns.graphic-project #liveDemoBtn {
+    flex: 0 1 auto;
+}
+
 /* A subtle outline button for the "Code" link */
 .btn-outline {
     border: 2px solid #ea6ed5; /* match your con-button pink */
@@ -787,6 +806,11 @@ body {
 .btn-outline:hover {
     background-color: rgba(234, 110, 213, 0.1); /* light pink fade on hover */
 }
+
+#liveDemoBtn:hover {
+    text-decoration: underline;
+}
+
 /* Hover Text Styling */
 .hover-text {
   position: absolute;
@@ -797,7 +821,7 @@ body {
   color: #fff;
   text-align: center;
   padding: 10px 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   opacity: 1;
   transform: translateY(0);
@@ -1615,9 +1639,3 @@ nav ul li a:hover {
     line-height: 1.4 !important;
   }
 }
-
-
-
-
-
-
