@@ -58,6 +58,11 @@
   a{
     text-decoration: none;
   }
+
+  .logo-container a,
+  .logo-container a:visited {
+    color: inherit;
+  }
   
   img{
     max-width: 100%;
